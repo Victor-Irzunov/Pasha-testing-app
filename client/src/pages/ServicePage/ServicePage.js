@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react'
 import './ServicePage.css'
 import { ThemesContext } from "../../themes/themes"
+import { observer } from "mobx-react-lite"
 import { AiFillCodeSandboxCircle, AiFillBug, AiOutlineStock, AiOutlineCheck } from "react-icons/ai";
 import { TbBrowserCheck } from "react-icons/tb";
 
-function ServicePage() {
+const ServicePage = observer(() => {
 
-	const { theme } = useContext(ThemesContext)
+	const { theme, user } = useContext(ThemesContext)
 	const [isActive, setIsActive] = useState(false)
 
 
@@ -17,8 +18,8 @@ function ServicePage() {
 
 	return (
 		<main className='main'>
-			<div className='bu-servece'></div>
-			<section className='main-service-section'>
+			<div className={user.isActive ? 'bu-service active' : 'bu-service'}></div>
+			<section className={user.isActive ? 'main-service-section active' : 'main-service-section'}>
 
 
 				<div className="contain">
@@ -29,7 +30,8 @@ function ServicePage() {
 									<AiFillCodeSandboxCircle />
 								</div>
 								<h3>Функциональное<br /> тестирование</h3>
-								<h4>от <sup>$</sup>250</h4>
+								{/* <h4>от <sup>$</sup>250</h4> */}
+								<h4>цена: договорная</h4>
 								<h5>Проверка функциональности, гарантия бесперебойной работы:</h5>
 								<ul>
 									<li><AiOutlineCheck /> <span>тестирование установки</span></li>
@@ -49,7 +51,8 @@ function ServicePage() {
 									<AiOutlineStock />
 								</div>
 								<h3>Тестирование<br /> производительности</h3>
-								<h4>от <sup>$</sup>500</h4>
+								{/* <h4>от <sup>$</sup>500</h4> */}
+								<h4>цена: договорная</h4>
 								<h5>Проверка системы на большие нагрузки:</h5>
 								<ul>
 									<li><AiOutlineCheck /> <span>тестирование производительности</span></li>
@@ -69,7 +72,8 @@ function ServicePage() {
 									<TbBrowserCheck />
 								</div>
 								<h3>Тестирование<br /> веб приложений</h3>
-								<h4>от <sup>$</sup>1000</h4>
+								{/* <h4>от <sup>$</sup>1000</h4> */}
+								<h4>цена: договорная</h4>
 								<h5>Виды тестирования веб-приложений:</h5>
 								<ul>
 									<li><AiOutlineCheck /> <span>функциональное тестирование</span></li>
@@ -88,8 +92,9 @@ function ServicePage() {
 								<div className="icon">
 									<AiFillBug />
 								</div>
-								<h3>Автоматизация<br/> тестирования</h3>
-								<h4>от <sup>$</sup>1700</h4>
+								<h3>Автоматизация<br /> тестирования</h3>
+								{/* <h4>от <sup>$</sup>1700</h4> */}
+								<h4>цена: договорная</h4>
 								<h5>Вид тестирования:</h5>
 								<ul>
 									<li><AiOutlineCheck /> <span>заменяет ручную работу</span></li>
@@ -110,6 +115,6 @@ function ServicePage() {
 			</section>
 		</main>
 	)
-}
+})
 
 export default ServicePage

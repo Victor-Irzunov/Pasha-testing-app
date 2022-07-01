@@ -1,16 +1,26 @@
-import React, { useContext } from 'react'
-// import video from './video/main-video.mp4'
+import React, { useContext, useState } from 'react'
 import video from './video/1.mp4'
-// import fon from './images/11.svg'
-// import fon2 from './images/9.png'
 import { ThemesContext } from "../../themes/themes"
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTelegramPlane, FaWhatsapp, FaPhoneAlt } from "react-icons/fa"
+import ModalWindow from '../../components/modals/ModalWindow'
+// import { FaLinkedinIn, FaInstagram, FaTelegramPlane, FaWhatsapp, FaPhoneAlt } from "react-icons/fa"
+// import { FiMail } from "react-icons/fi"
 import './MainPage.css'
+import SocialIcon from '../../components/social-icon/SocialIcon'
 
 function MainPage() {
-	const { theme, admin } = useContext(ThemesContext)
+	const { theme } = useContext(ThemesContext)
+	const [modalIsOpen, setIsOpen] = useState(false)
+	const [isSendBool, setSendBool] = useState(false)
 
-	// console.log('admin.isCandidat: ', admin.isCandidat)
+
+	function openModalData() {
+		setIsOpen(true)
+		setSendBool(true)
+	}
+	function closeModal() {
+		setIsOpen(false)
+		setSendBool(false)
+	}
 
 
 	return (
@@ -23,11 +33,11 @@ function MainPage() {
 					playsInline
 					muted
 					loop
-				// defaultMuted
-				// poster={background}
 				>
 					<source src={video} type='video/mp4' />
 				</video>
+
+				<ModalWindow modalIsOpen={modalIsOpen} isSendBool={isSendBool} closeModal={closeModal} />
 
 				<article className='main-article'>
 
@@ -39,25 +49,84 @@ function MainPage() {
 							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 							consequat.</p>
 
-						<a href="https://t.me/@pavel_j"
+						{/* <button
 							style={{ color: theme.textBlue, background: theme.backgroundBtn }}
-						>Написать нам</a>
+							onClick={openModalData}
+						>
+							Написать нам
+						</button> */}
+
+
+
+
+						{/* <div className="sm"
+						>
+
+							<div className='none'>
+								<a className='social icon'
+									href='tel:+375296177604'
+									title="Позвонить"
+									style={{ color: theme.text }}
+								>
+									<FaPhoneAlt />
+								</a>
+								<a href='tel:+375296177604'
+									style={{ color: theme.text }}
+									className='header-tel'
+								>
+									+ 375 29 617 76 04
+								</a>
+								<a className='social' href="#"
+									onClick={openModalData}
+									style={{ color: theme.text }}
+								>
+									<FiMail />
+								</a>
+								<a className='social'
+									style={{ color: theme.text }}
+									href="#"
+									target="_blanck"
+								><FaLinkedinIn /></a>
+								<a className='social'
+									style={{ color: theme.text }}
+									href="#"
+									target="_blanck"
+								><FaInstagram /></a>
+								<a className='social'
+									style={{ color: theme.text }}
+									href="https://t.me/pavel_j"
+									target="_blanck"
+								><FaTelegramPlane /></a>
+								<a className='social'
+									style={{ color: theme.text }}
+									href="http://wa.me/?text=Хочу%20к%20вам%20в%20группу!%20"
+									target="_blanck"
+								><FaWhatsapp /></a>
+							</div>
+
+
+						</div> */}
+
+						<SocialIcon openModalData={openModalData} />
+
 
 					</div>
 
-					<div className="sm" style={{ background: theme.text }}>
-						<a className='social icon' href="#"><FaPhoneAlt /></a>
+					{/* <div className="sm"
+					>
+						<a className='social icon'  href='tel:+375296177604'
+								title="Наш номер телефона"><FaPhoneAlt /></a>
 						<div className='none'>
 							<a className='social' href="#"><FaFacebookF /></a>
 							<a className='social' href="#"><FaLinkedinIn /></a>
 							<a className='social' href="#"><FaInstagram /></a>
-							<a className='social' href="https://t.me/@pavel_j"><FaTelegramPlane /></a>
+							<a className='social' href="https://t.me/pavel_j"><FaTelegramPlane /></a>
 							<a className='social'
 								href="http://wa.me/?text=Хочу%20к%20вам%20в%20группу!%20"
 							><FaWhatsapp /></a>
 						</div>
 						<a href='https://tel' className='header-tel'>+ 375 29 617 76 04</a>
-					</div>
+					</div> */}
 				</article>
 			</section>
 		</main>

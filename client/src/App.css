@@ -96,7 +96,7 @@ h6 {
 }
 
 .container {
-	width: 90vw;
+	width: 95vw;
 	margin: 0 auto;
 }
 
@@ -282,11 +282,11 @@ h6 {
 	transition: opacity 1s, -webkit-transform 1s;
 	transition: transform 1s, opacity 1s;
 	transition: transform 1s, opacity 1s, -webkit-transform 1s;
-	margin-bottom: 0.5em;
+	margin-bottom: 0.6em;
 
 }
 
-.outer-nav .li:hover a{
+.outer-nav .li:hover a {
 	color: #075497 !important;
 }
 
@@ -294,10 +294,11 @@ h6 {
 
 .enter {
 	position: absolute;
-	bottom: 1em;
+	top: 1em;
 	right: 1em;
-	font-size: 2vw;
+	font-size: 1.5em;
 	visibility: hidden;
+	opacity: 0.5;
 }
 
 .enter.is-vis {
@@ -305,3 +306,21 @@ h6 {
 }
 
 
+
+@media screen and (max-width: 768px) {
+	.outer-nav .li{
+		font-size: 3.5vw;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.outer-nav .li.is-vis {
+		margin-bottom: 0.7em;
+	}
+
+}
+@media screen and (max-width: 428px) {
+	.outer-nav .li{
+		font-size: 4.5vw;
+	}
+}

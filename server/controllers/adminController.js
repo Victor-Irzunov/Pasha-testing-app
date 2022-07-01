@@ -11,9 +11,9 @@ class AdminController {
 	async create(req, res, next) {
 		try {
 			let { title, article, } = req.body
-			
 
-			const img  = req.files
+
+			const img = req.files
 			if (img) {
 				const __dirname = decodeURI(new URL('.', import.meta.url).pathname)
 				let fileName = uuidv4() + ".jpg"
@@ -70,15 +70,14 @@ class AdminController {
 	async editOneArticle(req, res, next) {
 		try {
 			let { title, article, id } = req.body
-			const img  = req.files
-
+			const img = req.files
 			if (img) {
 				const __dirname = decodeURI(new URL('.', import.meta.url).pathname)
 				let fileName = uuidv4() + ".jpg"
 				img.img.mv(path.resolve(__dirname, '..', 'static', fileName))
 				await models.AdminArticle.update({ title, article, img: fileName }, { where: { id } })
 			} else {
-				await models.AdminArticle.update({ title, article }, { where: { id } })
+				await models.AdminArticle.update({ title, article, img: null }, { where: { id } })
 			}
 
 

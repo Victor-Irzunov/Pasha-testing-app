@@ -21,9 +21,9 @@ function ModalData({ closeModalData, modalIsOpen, id }) {
 
 			<section className={isActive ? 'modal-article active' : 'modal-article'}>
 
-				<label class="switch">
+				<label className="switch">
 					<input type="checkbox"  onClick={() => setIsActive(i => !i)} />
-					<span class="slider"></span>
+					<span className="slider"></span>
 				</label>
 
 				<article className=''>

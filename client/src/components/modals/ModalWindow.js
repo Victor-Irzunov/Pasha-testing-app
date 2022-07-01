@@ -3,12 +3,21 @@ import FormCreate from '../form/formCreate/FormCreate'
 import FormDelete from '../form/formDelete/FormDelete'
 import FormEdit from '../form/formEdit/FormEdit'
 import { ThemesContext } from '../../themes/themes'
+import FormSendMail from '../form/formSendMail/FormSendMail'
 import { AiFillCloseSquare } from "react-icons/ai"
 import './ModalWindow.css'
 
 
 const ModalWindow = (props) => {
-	const { modalIsOpen, closeModal, formAdd, formEdit, formDelete, colorH2 } = props
+	const {
+		modalIsOpen,
+		closeModal,
+		formAdd,
+		formEdit,
+		formDelete,
+		colorH2,
+		isSendBool,
+	} = props
 	const { admin } = useContext(ThemesContext)
 	const [isBool, setIsBool] = useState(false)
 
@@ -33,7 +42,7 @@ const ModalWindow = (props) => {
 				{formAdd && <FormCreate setIsBool={setIsBool} />}
 				{formEdit && <FormEdit setIsBool={setIsBool} />}
 				{formDelete && <FormDelete setIsBool={setIsBool} />}
-
+				{isSendBool && <FormSendMail />}
 			</div>
 		</div >
 	)

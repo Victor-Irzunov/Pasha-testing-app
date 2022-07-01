@@ -1,5 +1,5 @@
 .edit {
-	width: 10%;
+	width: 30%;
 	margin-left: 1em;
 	border: 2px solid #00e9f3;
 	color: #00e9f3;
@@ -15,4 +15,20 @@
 
 .get-id {
 	margin-bottom: 1em;
+}
+
+.box-img-btn {
+	max-width: 10vw;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.btn-delete {
+	background: red;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0px 6px 0px 6px;
 }

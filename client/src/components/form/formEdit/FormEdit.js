@@ -64,7 +64,8 @@ const FormEdit = ({ setIsBool }) => {
 		for (let k in file) {
 			formData.append('img', file[k])
 		}
-		editOneArticle(formData).then(data => {
+		editOneArticle(formData)
+			.then(data => {
 			admin.setMessage(data.message)
 			setIsBool(true)
 			setTitle('')
@@ -78,15 +79,15 @@ const FormEdit = ({ setIsBool }) => {
 		})
 	}
 
-
+	console.log('file: ', file)
 
 	return (
 		<form>
 			<div className='box-form' style={{ color: '#00e9f3' }}>
 
-				
+
 				<div className='get-id'>
-				<label htmlFor='edit-input'>Введите id статьи: &nbsp;</label>
+					<label htmlFor='edit-input'>Введите id статьи: &nbsp;</label>
 					<input
 						type="text"
 						name='editOne'
@@ -127,25 +128,52 @@ const FormEdit = ({ setIsBool }) => {
 					{isImg &&
 						imgSrc.imageArray.map((imgURI) => {
 							return (
-								<img
-									className='form-img'
-									src={imgURI}
+								<div
+									className='box-img-btn'
 									key={imgURI}
-									title='тестирование картинка статьи'
-									alt='тестирование картинка статьи'
-								/>
+								>
+									<img
+										className='form-img'
+										src={imgURI}
+										key={imgURI}
+										title='тестирование картинка статьи'
+										alt='тестирование картинка статьи'
+									/>
+									<button
+										className='btn-delete'
+										onClick={() => {
+											setFile([])
+											setIsImg(false)
+										}}
+									>
+										x
+									</button>
+								</div>
 							)
 						})
 					}
 
 					{!isImg && img &&
-						<img
-							src={process.env.REACT_APP_API_URL + img}
-							title='тестирование картинка статьи'
-							alt='тестирование картинка статьи'
-							className='form-img'
-						/>
+						<div
+							className='box-img-btn'
+						>
+							<img
+								src={process.env.REACT_APP_API_URL + img}
+								title='тестирование картинка статьи'
+								alt='тестирование картинка статьи'
+								className='form-img'
+							/>
+							<button
+								className='btn-delete'
+								onClick={() => {
+									setImg('')
+								}}
+							>
+								x
+							</button>
+						</div>
 					}
+
 
 				</div>
 				<label htmlFor="article">Изменить текст статьи:</label>

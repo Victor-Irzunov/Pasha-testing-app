@@ -3,12 +3,16 @@ import './AboutPage.css'
 import img1 from './images/tester-3.gif'
 import img2 from './images/tester-1.gif'
 import img3 from './images/tester-2.gif'
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTelegramPlane, FaWhatsapp, FaPhoneAlt } from "react-icons/fa"
+// import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTelegramPlane, FaWhatsapp, FaPhoneAlt } from "react-icons/fa"
 import { ThemesContext } from "../../themes/themes"
+import SocialIcon from '../../components/social-icon/SocialIcon'
+import { useLocation } from 'react-router-dom'
 
 function AboutPage() {
 
 	const { theme } = useContext(ThemesContext)
+	const location = useLocation()
+	let isTrue = location.pathname === '/about'
 
 
 	return (
@@ -20,12 +24,13 @@ function AboutPage() {
 					<h3>В нашей студии по тестированию программного обеспечения работаю программисты с большим опытом работы  orem ipsum dolor sit, amet candae optio odio atque, rem maiores laudantium accusantium? Quia praesentium facilis sed eligendi?
 						di elit. Nihil minima totam labore, animi mollitia dolores debitis voluptatibus recusandae optio odio atque, rem maiores laudantium accusantium. Quia praesentium facilis sed eligendi.
 					</h3>
-					<div className='about-social'>
-						<FaLinkedinIn className='about-icon' />
+					{/* <div className='about-social'> */}
+					{/* <FaLinkedinIn className='about-icon' />
 						<FaInstagram className='about-icon' />
 						<FaTelegramPlane className='about-icon' />
 						<FaWhatsapp className='about-icon' />
-					</div>
+					</div> */}
+					<SocialIcon isTrue={isTrue} />
 				</div>
 				<div className='about-box-right'>
 					<div className='circle' style={{ background: theme.text }}>
