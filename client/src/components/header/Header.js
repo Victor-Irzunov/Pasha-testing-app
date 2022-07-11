@@ -52,7 +52,7 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme }) => {
 				<Link to="/" ><img className='logo' src={logo} alt='Тест IT продуктов' title='Логотип компании' /></Link>
 
 				{
-					user.isAuth && admin.isMail && <Link to="/message-contact" >
+					user.isAuth && admin.isMail && <Link to="/message-contact" className='message-icon' >
 						<MdOutlineMarkEmailUnread className='icon-mail' />
 					</Link>
 				}

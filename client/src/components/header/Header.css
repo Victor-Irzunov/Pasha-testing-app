@@ -32,9 +32,14 @@ header {
 .icon-mail {
 	color: red;
 	font-size: 2.5em;
-	margin-left: 1em;
+	/* margin-left: 1em; */
 }
-
+.message-icon{
+	position: absolute;
+	top: 20%;
+	left: 60%;
+	transform: translateX(-50%);
+}
 .toggle {
 	position: relative;
 	top: 0;
