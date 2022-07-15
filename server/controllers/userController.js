@@ -28,10 +28,10 @@ class UserController {
 			if (candidate) {
 				return next(ApiError.badRequest('Пользователь с таким email уже существует'))
 			}
-			const admin = await models.User.findOne({ where: { role: 'ADMIN' } })
-			if (admin) {
-				return next(ApiError.badRequest('Админисратор уже существует'))
-			}
+			// const admin = await models.User.findOne({ where: { role: 'ADMIN' } })
+			// if (admin) {
+			// 	return next(ApiError.badRequest('Админисратор уже существует'))
+			// }
 			const hashPassword = await bcrypt.hash(password, 5)
 			// const activationLink = uuidv4()
 

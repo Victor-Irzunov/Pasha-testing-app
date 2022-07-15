@@ -74,22 +74,32 @@ const Auth = observer(() => {
 					user.setUser(user)
 					user.setIsAuth(true)
 					user.setData(data)
-				})
-				if (user.isAuth) {
-					console.log('------------>')
 					navigate('/')
-				}
+				})
+				// if (user.isAuth) {
+				// 	console.log('------------>')
+				// 	navigate('/')
+				// }
 			} else {
 				registration(email, password).then(data => {
 					user.setUser(user)
 					user.setIsAuth(true)
 					user.setData(data)
-				})
-				if (user.isAuth) {
-					console.log('------------>')
 					navigate('/')
-				}
+				})
+				// if (user.isAuth) {
+				// 	console.log('----2-------->')
+				// 	navigate('/')
+				// }
 			}
+			// if (user.isAuth) {
+			// 	console.log('------------>')
+			// 	navigate('/')
+			// }
+
+
+
+
 
 		} catch (e) {
 			console.log('err in LoginPage clinckform', e)

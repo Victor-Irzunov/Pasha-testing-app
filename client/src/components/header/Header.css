@@ -34,12 +34,14 @@ header {
 	font-size: 2.5em;
 	/* margin-left: 1em; */
 }
-.message-icon{
+
+.message-icon {
 	position: absolute;
 	top: 20%;
 	left: 60%;
 	transform: translateX(-50%);
 }
+
 .toggle {
 	position: relative;
 	top: 0;
@@ -103,6 +105,14 @@ header {
 	background: #fb262c;
 }
 
+.toggle .toggle-span-menu.active2:before {
+	background: #fff;
+}
+
+.toggle .toggle-span-menu.active2:after {
+	background: #fff;
+}
+
 
 .toggle.active .toggle-span-menu:before {
 	transform: rotate(225deg);
@@ -114,7 +124,12 @@ header {
 	bottom: 23px;
 }
 
-.power-switch {
+
+
+
+
+
+/* .power-switch {
 	--color-invert: #fb262c;
 	--width: 60px;
 	--height: 155px;
@@ -181,7 +196,6 @@ header {
 
 .power-switch .button .power-on {
 	filter: drop-shadow(0px 0px 6px #fb262dce);
-	/* filter: drop-shadow(0px 0px 6px #ccff00b3); */
 }
 
 .power-switch .button .power-on .line {
@@ -319,4 +333,71 @@ header {
 	100% {
 		transform: scale(1);
 	}
+} */
+
+
+
+
+
+
+
+
+.parent {
+	display: flex;
+	align-items: center;
+
+}
+
+.parent span {
+	margin-right: 1em;
+}
+
+.switch-3-ways {
+	margin: auto;
+	font-size: 1em;
+	height: 2em;
+	line-height: 2em;
+	border-radius: 0.3em;
+	/* background: rgba(204, 204, 204, 0.338); */
+	background: #025395b5;
+	position: relative;
+	display: block;
+	float: left;
+}
+
+.switch-btn.yellow,
+.switch-btn.red,
+.switch-btn.white {
+	cursor: pointer;
+	position: relative;
+	display: block;
+	float: left;
+	padding: 0 1em;
+	-webkit-transition: 300ms ease-out;
+	-moz-transition: 300ms ease-out;
+	transition: 300ms ease-out;
+}
+
+.switch-btn.active {
+	color: white;
+	border-radius: 0.3em;
+	-moz-box-shadow: 0px 0px 7px 1px #656565;
+	-webkit-box-shadow: 0px 0px 7px 1px #656565;
+	-o-box-shadow: 0px 0px 7px 1px #656565;
+	box-shadow: 0px 0px 7px 1px #656565;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=NaN, Strength=7);
+}
+
+.switch-btn.yellow.active {
+	background-color: #ccff00;
+	color: #000;
+}
+
+.switch-btn.red.active {
+	background-color: #fb262c
+}
+
+.switch-btn.white.active {
+	background-color: #fff;
+	color: #000;
 }

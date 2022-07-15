@@ -1,5 +1,5 @@
 {
-  "port": 8080,
+  "port": 5000,
   "SECRET_KEY":"secret_2021_2022",
-  "baseUrl": "https://euro-app.tech/"
+  "baseUrl": "http://localhost:5000/"
 }

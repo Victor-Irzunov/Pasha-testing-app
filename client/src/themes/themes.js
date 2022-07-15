@@ -8,7 +8,8 @@ export const themes = {
 		outline: '10px solid #ccff00',
 		backgroundBtn: '#075497',
 		textBlue: '#ccff00',
-		background:  '#ccff00',
+		background: '#ccff00',
+		num: 1,
 	},
 	dark: {
 		text: '#fb262c',
@@ -17,6 +18,16 @@ export const themes = {
 		backgroundBtn: '#fb262c',
 		textBlue: '#075497',
 		background: '#fff',
+		num: 2,
+	},
+	third: {
+		text: '#fff',
+		isActive: false,
+		outline: '10px solid #fff',
+		backgroundBtn: '#fff',
+		textBlue: '#075497',
+		background: '#fff',
+		num: 3,
 	}
 }
 

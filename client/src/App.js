@@ -38,16 +38,24 @@ const App = observer(() => {
 
   useEffect(() => {
     check().then(data => {
-
       user.setIsAuth(true)
       user.setUser(true)
       user.setData(data)
     }).finally(() => setLoading(false))
   }, [user])
 
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === themes.dark
-      ? themes.ligth : themes.dark)
+  const toggleTheme = (num) => {
+    switch (num) {
+      case '1':
+        setTheme(themes.ligth);
+        break;
+      case '2':
+        setTheme(themes.dark);
+        break;
+      case '3':
+        setTheme(themes.third);
+        break;
+    }
   }
 
 
@@ -105,8 +113,10 @@ const App = observer(() => {
       <Suspense fallback={(<div>Loading</div>)}>
         <div className='app'>
           <div className={classPerspective} onClick={closeMenu}>
-            <div className="cont" style={{ outline: theme.outline }}>
-             
+            <div className="cont"
+              style={{ outline: theme.outline }}
+            >
+
               <div className={classNavReturn}></div>
               <Header
                 openMenu={openMenu}

@@ -14,13 +14,15 @@ import { useLocation } from 'react-router-dom'
 import './Header.css'
 import logo from './images/logo.png'
 
-const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme }) => {
+const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumTheme }) => {
 
 	const { theme, admin, user } = useContext(ThemesContext)
 	const [isMail, setIsMail] = useState(false)
 	const [isCandidat, setIsCandidat] = useState(false)
 	const [isBtnThemeService, setIsBtnService] = useState(true)
-
+	const [isChangeYellow, setIsChangeYellow] = useState(true)
+	const [isChangeRed, setIsChangeRed] = useState(false)
+	const [isChangeWhite, setIsChangeWhite] = useState(false)
 	const location = useLocation()
 	let isClass = location.pathname === '/service'
 
@@ -45,6 +47,10 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme }) => {
 			})
 	}, [admin.isCandidat])
 
+	let redClass = isChangeRed ? "switch-btn red active" : "switch-btn red"
+	let yellowClass = isChangeYellow ? "switch-btn yellow active" : "switch-btn yellow"
+	let whiteClass = isChangeWhite ? "switch-btn white active" : "switch-btn white"
+
 
 	return (
 		<header>
@@ -66,7 +72,49 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme }) => {
 
 				{!isClass ?
 					<>
-						<div className="power-switch" onClick={() => toggleTheme()}>
+						<div className="parent">
+							<span style={{ color: theme.text }}>Тема сайта: </span>
+							<div className="switch-3-ways">
+								<div className={yellowClass}
+									// style={{backgroundColor: theme.text, color: '#000'}}
+									onClick={() => {
+										// setNumTheme('1')
+										toggleTheme('1')
+										setIsChangeYellow(true)
+										setIsChangeRed(false)
+										setIsChangeWhite(false)
+										// user.setNumTheme(1)
+
+									}}
+								>yellow</div>
+								<div className={redClass}
+									// style={{backgroundColor: theme.text}}
+									onClick={() => {
+										// setNumTheme('2')
+										toggleTheme('2')
+										setIsChangeYellow(false)
+										setIsChangeRed(true)
+										setIsChangeWhite(false)
+										// user.setNumTheme(2)
+
+									}}
+								>red</div>
+								<div className={whiteClass}
+									// style={{backgroundColor: theme.text, color: '#000'}}
+									onClick={() => {
+										// setNumTheme('3')
+										toggleTheme('3')
+										setIsChangeYellow(false)
+										setIsChangeRed(false)
+										setIsChangeWhite(true)
+										// user.setNumTheme(3)
+
+									}}
+								>white</div>
+							</div>
+						</div>
+
+						{/* <div className="power-switch" onClick={() => toggleTheme()}>
 							<input type="checkbox" />
 							<div className="button">
 								<svg className="power-off">
@@ -87,7 +135,10 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme }) => {
 							<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="circle">
 								<circle cx="75" cy="80" r="35" />
 							</symbol>
-						</svg>
+						</svg> */}
+
+
+
 					</>
 					:
 					<>
@@ -122,7 +173,7 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme }) => {
 					}}
 				>
 					<span
-						className={theme.isActive ? 'toggle-span-menu' : 'toggle-span-menu active'}
+						className={theme.num === 1 && 'toggle-span-menu' || theme.num === 2&&'toggle-span-menu active' || theme.num === 3 &&'toggle-span-menu active2'}
 					></span>
 				</div>
 

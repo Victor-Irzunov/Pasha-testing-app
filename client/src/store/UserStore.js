@@ -6,6 +6,7 @@ export default class UserStore {
 		this._user = {}
 		this._userData = {}
 		this._isActive = false
+		this._numTheme = 1
 
 
 		makeAutoObservable(this)
@@ -24,6 +25,9 @@ export default class UserStore {
 	setIsActive(data) {
 		this._isActive = data
 	}
+	setNumTheme(data) {
+		this._numTheme = data
+	}
 
 
 	get isAuth() {
@@ -37,6 +41,9 @@ export default class UserStore {
 	}
 	get isActive() {
 		return this._isActive
+	}
+	get numTheme() {
+		return this._numTheme
 	}
 
 }
