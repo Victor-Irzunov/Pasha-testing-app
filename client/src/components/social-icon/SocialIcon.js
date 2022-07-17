@@ -46,7 +46,7 @@ function SocialIcon({ openModalData, isTrue }) {
 				><FaInstagram /></a>
 				<a className='social'
 					style={{ color: theme.text }}
-					href="https://t.me/pavel_j"
+					href="https://t.me/softwareteststudio"
 					target="_blanck"
 				><FaTelegramPlane /></a>
 				<a className='social'

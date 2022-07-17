@@ -34,12 +34,6 @@ app.use(fileUpload({}))
 app.use(compression())
 app.use('/api', router)
 
-// app.use(function (req, res, next) {
-// 	res.header("Cross-Origin-Embedder-Policy", "require-corp");
-// 	res.header("Cross-Origin-Opener-Policy", "same-origin");
-// 	next();
-// });
-
 
 if (process.env.NODE_ENV === 'production') {
 	app.use('/', express.static(path.join(__dirname, '../client', 'build')))

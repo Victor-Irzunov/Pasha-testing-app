@@ -116,7 +116,6 @@ const App = observer(() => {
             <div className="cont"
               style={{ outline: theme.outline }}
             >
-
               <div className={classNavReturn}></div>
               <Header
                 openMenu={openMenu}
@@ -141,10 +140,6 @@ const App = observer(() => {
               </Routes>
               <Footer />
             </div>
-
-
-
-
             <div className={!isPerspective ? "enter" : "enter is-vis"}>
               <Link style={{ color: theme.text }} to="/login"><IoIosLogIn /></Link>
             </div>
