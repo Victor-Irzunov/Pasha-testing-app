@@ -12,6 +12,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import compression from 'compression'
 import helmet from 'helmet'
+// import contentSecurityPolicy from 'helmet-csp'
 
 
 
@@ -34,6 +35,29 @@ app.use(fileUpload({}))
 app.use(compression())
 app.use('/api', router)
 
+// app.use(
+// 	contentSecurityPolicy({
+// 		useDefaults: true,
+// 		directives: {
+// 			defaultSrc: ["'self'", "default.example"],
+// 			scriptSrc: ["'self'", "https://widget.replain.cc/dist/client.js"],
+// 			objectSrc: ["'none'"],
+// 			upgradeInsecureRequests: [],
+// 		},
+// 		reportOnly: false,
+// 	})
+// );
+
+app.use(
+	helmet.contentSecurityPolicy({
+		directives: {
+			"script-src": ["'self'", "https://widget.replain.cc/dist/client.js"],
+			// "style-src": null,
+		},
+	})
+);
+
+
 
 if (process.env.NODE_ENV === 'production') {
 	app.use('/', express.static(path.join(__dirname, '../client', 'build')))
@@ -42,6 +66,8 @@ if (process.env.NODE_ENV === 'production') {
 		res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
 	})
 }
+
+
 
 //: middleware c err обязательно в конце
 app.use(errorHandler)
