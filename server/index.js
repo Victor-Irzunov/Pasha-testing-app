@@ -12,7 +12,6 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import compression from 'compression'
 import helmet from 'helmet'
-// import contentSecurityPolicy from 'helmet-csp'
 
 
 
@@ -35,24 +34,14 @@ app.use(fileUpload({}))
 app.use(compression())
 app.use('/api', router)
 
-// app.use(
-// 	contentSecurityPolicy({
-// 		useDefaults: true,
-// 		directives: {
-// 			defaultSrc: ["'self'", "default.example"],
-// 			scriptSrc: ["'self'", "https://widget.replain.cc/dist/client.js"],
-// 			objectSrc: ["'none'"],
-// 			upgradeInsecureRequests: [],
-// 		},
-// 		reportOnly: false,
-// 	})
-// );
+
 
 app.use(
 	helmet.contentSecurityPolicy({
+		useDefaults: true,
 		directives: {
 			"script-src": ["'self'", "https://widget.replain.cc/dist/client.js"],
-			// "style-src": null,
+			"style-src": null,
 		},
 	})
 );
