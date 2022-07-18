@@ -40,7 +40,7 @@ app.use(
 	helmet.contentSecurityPolicy({
 		useDefaults: true,
 		directives: {
-			"script-src": ["'self'", "https://widget.replain.cc/dist/client.js"],
+			"script-src": ["'self'", "'unsafe-inline'", "https://widget.replain.cc/dist/client.js"],
 			"style-src": null,
 		},
 	})
