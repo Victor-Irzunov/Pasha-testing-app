@@ -10,7 +10,7 @@ function Footer() {
 		<footer style={isClass ? { background: '#232427' } : { background: 'transparent' }}>
 			<div className='container'>
 				<p className="copyright">Copyright © 2022 | Created & Designed By<span><a href="https://vi-tech.by"
-					target="_blank"> VI:TECH</a></span></p>
+					target="_blank" rel="noreferrer"> VI:TECH</a></span></p>
 			</div>
 		</footer>
 	)

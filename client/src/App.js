@@ -55,6 +55,8 @@ const App = observer(() => {
       case '3':
         setTheme(themes.third);
         break;
+      default:
+        setTheme(themes.ligth);
     }
   }
 

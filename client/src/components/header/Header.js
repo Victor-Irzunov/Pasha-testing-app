@@ -10,6 +10,7 @@ import { getIsContact } from "../../http/contactMessageAPI"
 import { getIsCandidat } from '../../http/candidateAPI'
 import { MdOutlineMarkEmailUnread } from "react-icons/md"
 import { FaUserTie, FaSun, FaMoon } from "react-icons/fa"
+import { VscBug} from "react-icons/vsc"
 import { useLocation } from 'react-router-dom'
 import './Header.css'
 import logo from './images/logo.png'
@@ -35,7 +36,7 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 					admin.setIsMail(true)
 				}
 			})
-	}, [admin.isMail])
+	}, [admin.isMail, isMail, admin])
 
 	useEffect(() => {
 		getIsCandidat()
@@ -45,7 +46,7 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 					admin.setIsCandidat(true)
 				}
 			})
-	}, [admin.isCandidat])
+	}, [admin.isCandidat, isCandidat, admin])
 
 	let redClass = isChangeRed ? "switch-btn red active" : "switch-btn red"
 	let yellowClass = isChangeYellow ? "switch-btn yellow active" : "switch-btn yellow"
@@ -56,7 +57,6 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 		<header>
 			<div className='header-section container'>
 				<Link to="/" ><img className='logo' src={logo} alt='Тест IT продуктов' title='Логотип компании' /></Link>
-
 				{
 					user.isAuth && admin.isMail && <Link to="/message-contact" className='message-icon' >
 						<MdOutlineMarkEmailUnread className='icon-mail' />
@@ -67,77 +67,39 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 						<FaUserTie className='icon-mail' />
 					</Link>
 				}
-
-
-
 				{!isClass ?
 					<>
 						<div className="parent">
-							<span style={{ color: theme.text }}>Тема сайта: </span>
 							<div className="switch-3-ways">
 								<div className={yellowClass}
-									// style={{backgroundColor: theme.text, color: '#000'}}
 									onClick={() => {
-										// setNumTheme('1')
 										toggleTheme('1')
 										setIsChangeYellow(true)
 										setIsChangeRed(false)
 										setIsChangeWhite(false)
-										// user.setNumTheme(1)
 
 									}}
-								>yellow</div>
+								><VscBug className={!isChangeYellow ? 'yellow-bug': 'yellow-bug active'} /></div>
 								<div className={redClass}
-									// style={{backgroundColor: theme.text}}
 									onClick={() => {
-										// setNumTheme('2')
 										toggleTheme('2')
 										setIsChangeYellow(false)
 										setIsChangeRed(true)
 										setIsChangeWhite(false)
-										// user.setNumTheme(2)
 
 									}}
-								>red</div>
+								><VscBug className={ !isChangeRed ? 'red-bug': 'red-bug active'} /></div>
 								<div className={whiteClass}
-									// style={{backgroundColor: theme.text, color: '#000'}}
 									onClick={() => {
-										// setNumTheme('3')
 										toggleTheme('3')
 										setIsChangeYellow(false)
 										setIsChangeRed(false)
 										setIsChangeWhite(true)
-										// user.setNumTheme(3)
 
 									}}
-								>white</div>
+								><VscBug className={!isChangeWhite ? 'white-bug' : 'white-bug active' } /></div>
 							</div>
 						</div>
-
-						{/* <div className="power-switch" onClick={() => toggleTheme()}>
-							<input type="checkbox" />
-							<div className="button">
-								<svg className="power-off">
-									<use xlinkHref="#line" className="line" />
-									<use xlinkHref="#circle" className="circle" />
-								</svg>
-								<svg className="power-on">
-									<use xlinkHref="#line" className="line" />
-									<use xlinkHref="#circle" className="circle" />
-								</svg>
-							</div>
-						</div>
-
-						<svg xmlns="http://www.w3.org/2000/svg" style={{ display: 'none' }}>
-							<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="line">
-								<line x1="75" y1="34" x2="75" y2="58" />
-							</symbol>
-							<symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" id="circle">
-								<circle cx="75" cy="80" r="35" />
-							</symbol>
-						</svg> */}
-
-
 
 					</>
 					:
@@ -162,8 +124,6 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 						}
 					</>
 				}
-
-
 				<div
 					style={{ color: theme.text }}
 					className={isActive ? "toggle active" : "toggle"}
@@ -173,13 +133,9 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 					}}
 				>
 					<span
-						className={theme.num === 1 && 'toggle-span-menu' || theme.num === 2&&'toggle-span-menu active' || theme.num === 3 &&'toggle-span-menu active2'}
+						className={(theme.num === 1 && 'toggle-span-menu') || (theme.num === 2 && 'toggle-span-menu active') || (theme.num === 3 && 'toggle-span-menu active2')}
 					></span>
 				</div>
-
-
-
-
 			</div>
 		</header>
 	)
