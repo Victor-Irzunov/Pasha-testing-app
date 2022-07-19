@@ -34,26 +34,28 @@ app.use(fileUpload({}))
 app.use(compression())
 app.use('/api', router)
 
+// app.all('/*', function(req, res, next) {
+// 	res.header("Cross-Origin-Resource-Policy", "cross-origin");
+// 	next();
+//  });
 
-
-// app.use(
-// 	helmet.contentSecurityPolicy({
-// 		useDefaults: true,
+app.use(
+	helmet.contentSecurityPolicy({
+		directives: {
+			"script-src": ["'self'", "https://widget.replain.cc"],
+			// "script-src-elem": ["'self'", "https://widget.replain.cc/dist/client.js", "'unsafe-inline'"]
+		},
+	})
+)
+// app.use(helmet({
+// 	contentSecurityPolicy: {
 // 		directives: {
-// 			"script-src": ["'self'", "https://widget.replain.cc/dist/client.js", "'unsafe-inline'"],
+// 			...helmet.contentSecurityPolicy.getDefaultDirectives(),
 // 			"script-src-elem": ["'self'", "https://widget.replain.cc/dist/client.js", "'unsafe-inline'"]
 // 		},
-// 	})
+// 	},
+// })
 // )
-app.use(helmet({
-	contentSecurityPolicy: {
-		directives: {
-			...helmet.contentSecurityPolicy.getDefaultDirectives(),
-			"script-src-elem": ["'self'", "https://widget.replain.cc/dist/client.js", "'unsafe-inline'"]
-		},
-	},
-})
-)
 
 
 

@@ -84,7 +84,7 @@ function WorkPage() {
 							<label htmlFor='tel-work' className='tel-title'>Напишите о себе*</label>
 							<textarea
 								className="message-zone"
-								placeholder="Опишите подробно свои навыки и стейк технологий которыми владеете..."
+								placeholder="Опишите подробно свои навыки и стек технологий которыми владеете..."
 								value={message}
 								name="message"
 								required={true}
