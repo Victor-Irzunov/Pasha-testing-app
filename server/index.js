@@ -36,13 +36,23 @@ app.use('/api', router)
 
 
 
-app.use(
-	helmet.contentSecurityPolicy({
-		useDefaults: true,
+// app.use(
+// 	helmet.contentSecurityPolicy({
+// 		useDefaults: true,
+// 		directives: {
+// 			"script-src": ["'self'", "https://widget.replain.cc/dist/client.js", "'unsafe-inline'"],
+// 			"script-src-elem": ["'self'", "https://widget.replain.cc/dist/client.js", "'unsafe-inline'"]
+// 		},
+// 	})
+// )
+app.use(helmet({
+	contentSecurityPolicy: {
 		directives: {
-			scriptSrc: ["'self'", "https://widget.replain.cc/dist/client.js", "'unsafe-inline'"],
+			...helmet.contentSecurityPolicy.getDefaultDirectives(),
+			"script-src-elem": ["'self'", "https://widget.replain.cc/dist/client.js", "'unsafe-inline'"]
 		},
-	})
+	},
+})
 )
 
 
