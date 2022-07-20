@@ -63,7 +63,7 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 					</Link>
 				}
 				{
-					user.isAuth && admin.isCandidat && <Link to="/message-candidat" >
+					user.isAuth && admin.isCandidat && <Link to="/message-candidat"className='message-icon2' >
 						<FaUserTie className='icon-mail' />
 					</Link>
 				}

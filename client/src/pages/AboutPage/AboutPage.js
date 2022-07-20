@@ -21,8 +21,7 @@ function AboutPage() {
 			<section className='about container' style={{ color: theme.text }}>
 				<div className='about-box-left'>
 					<h2>О нас</h2>
-					<h3>В нашей студии по тестированию программного обеспечения работаю программисты с большим опытом работы  orem ipsum dolor sit, amet candae optio odio atque, rem maiores laudantium accusantium? Quia praesentium facilis sed eligendi?
-						di elit. Nihil minima totam labore, animi mollitia dolores debitis voluptatibus recusandae optio odio atque, rem maiores laudantium accusantium. Quia praesentium facilis sed eligendi.
+					<h3>В нашей студии по тестированию ПО работаю программисты с опытом работы более 10 лет. Через нашу команду тестировщиков прошли многие проекты от небольших сайтов до крупных корпоративных приложений. 
 					</h3>
 					{/* <div className='about-social'> */}
 					{/* <FaLinkedinIn className='about-icon' />

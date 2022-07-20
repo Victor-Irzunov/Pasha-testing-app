@@ -16,6 +16,7 @@ import ServicePage from './pages/ServicePage/ServicePage'
 import LoginPage from './pages/LoginPage/LoginPage'
 import Spinner from './components/spiner/Spiner'
 import { IoIosLogIn } from 'react-icons/io'
+import { ImExit } from 'react-icons/im'
 import { observer } from "mobx-react-lite"
 import { check } from "./http/userAPI"
 import UserStore from './store/UserStore'
@@ -106,6 +107,12 @@ const App = observer(() => {
     }
   }
 
+  const exit = () => {
+    localStorage.removeItem('token')
+    user.setIsAuth(false)
+    user.setUser(false)
+  }
+
   if (loading) {
     return <Spinner />
   }
@@ -143,7 +150,14 @@ const App = observer(() => {
               <Footer />
             </div>
             <div className={!isPerspective ? "enter" : "enter is-vis"}>
-              <Link style={{ color: theme.text }} to="/login"><IoIosLogIn /></Link>
+              {
+                user.isAuth ? <Link style={{ color: theme.text }} to="/" onClick={exit}>
+                  <ImExit />
+                </Link>
+                  : <Link style={{ color: theme.text }} to="/login">
+                    <IoIosLogIn />
+                  </Link>
+              }
             </div>
           </div>
 

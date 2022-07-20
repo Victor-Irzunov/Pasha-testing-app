@@ -40,6 +40,12 @@ header {
 	left: 60%;
 	transform: translateX(-50%);
 }
+.message-icon2 {
+	position: absolute;
+	top: 20%;
+	left: 65%;
+	transform: translateX(-50%);
+}
 
 .toggle {
 	position: relative;
