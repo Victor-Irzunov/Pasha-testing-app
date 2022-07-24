@@ -23,12 +23,6 @@ function AboutPage() {
 					<h2>О нас</h2>
 					<h3>В нашей студии по тестированию ПО работаю программисты с опытом работы более 10 лет. Через нашу команду тестировщиков прошли многие проекты от небольших сайтов до крупных корпоративных приложений. 
 					</h3>
-					{/* <div className='about-social'> */}
-					{/* <FaLinkedinIn className='about-icon' />
-						<FaInstagram className='about-icon' />
-						<FaTelegramPlane className='about-icon' />
-						<FaWhatsapp className='about-icon' />
-					</div> */}
 					<SocialIcon isTrue={isTrue} />
 				</div>
 				<div className='about-box-right'>

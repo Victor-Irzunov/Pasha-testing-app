@@ -3,6 +3,8 @@ import { createArticle } from '../../../http/adminAPI.js'
 import BtnForm from '../../btnForm/BtnForm.js'
 import { ThemesContext } from '../../../themes/themes.js'
 import './FormCreate.css'
+import CKeditor  from '../../ckeditor/CKeditor'
+
 
 const FormCreate = ({ setIsBool }) => {
 	const { admin } = useContext(ThemesContext)
@@ -16,6 +18,10 @@ const FormCreate = ({ setIsBool }) => {
 		}
 	)
 	const [, setIsImg] = useState(false)
+
+	console.log('textArticle: ', textArticle)
+
+
 	const imageInputRef = useRef()
 
 
@@ -77,7 +83,6 @@ const FormCreate = ({ setIsBool }) => {
 					name='title'
 					value={title}
 					onChange={e => setTitle(e.target.value)}
-					// placeholder="Введите название статьи"
 					id='h2-input'
 				/>
 
@@ -106,13 +111,14 @@ const FormCreate = ({ setIsBool }) => {
 				</div>
 
 				<label htmlFor="article">Напишите текст статьи:</label>
-				<textarea
+				{/* <textarea
 					id='article'
 					value={textArticle}
 					multiple
 					name='article'
 					onChange={e => setTextArticle(e.target.value)}
-				/>
+				/> */}
+				<CKeditor setTextArticle={setTextArticle} />
 
 				<BtnForm fun={e => sendFormCreateArticle(e)} title={'Добавить'} color={'#60ec6d'} />
 			</div>

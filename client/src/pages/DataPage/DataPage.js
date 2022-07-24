@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { getAll } from '../../http/adminAPI.js'
 import ModalData from '../../components/modalData/ModalData.js'
+
 import { ThemesContext } from '../../themes/themes'
 import './DataPage.css'
 

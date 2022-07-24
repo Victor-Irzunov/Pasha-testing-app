@@ -61,6 +61,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .main-service-section.active .contain .card-service {
@@ -165,6 +172,7 @@
 .contain .card-service:nth-child(4) .box-card .content h3 {
 	color: #6b10d3;
 }
+
 .contain .card-service:nth-child(5) .box-card .content h3 {
 	color: #e0d90b;
 }

@@ -4,11 +4,11 @@
 	border: 0;
 
 
-	-webkit-user-select: none;
+	/* -webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-	user-select: none;
+	user-select: none; */
 }
 
 
@@ -86,7 +86,7 @@ img {
 	vertical-align: top;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -94,7 +94,7 @@ h5,
 h6 {
 	font-size: inherit;
 	font-weight: 400;
-}
+} */
 
 .app {
 	max-width: 100%;

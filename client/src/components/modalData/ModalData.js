@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './ModalData.css'
 import { getOne } from '../../http/adminAPI'
+import parse from 'html-react-parser'
 import { AiFillCloseSquare } from "react-icons/ai"
 
 function ModalData({ closeModalData, modalIsOpen, id }) {
@@ -22,7 +23,7 @@ function ModalData({ closeModalData, modalIsOpen, id }) {
 			<section className={isActive ? 'modal-article active' : 'modal-article'}>
 
 				<label className="switch">
-					<input type="checkbox"  onClick={() => setIsActive(i => !i)} />
+					<input type="checkbox" onClick={() => setIsActive(i => !i)} />
 					<span className="slider"></span>
 				</label>
 
@@ -30,7 +31,7 @@ function ModalData({ closeModalData, modalIsOpen, id }) {
 					<h2>{dataRef.current.title}</h2>
 					<p className='id-data-modal'>id: {dataRef.current.id}</p>
 					{dataRef.current.img && <img src={process.env.REACT_APP_API_URL + dataRef.current.img} />}
-					<p className='text-article'>{dataRef.current.article}</p>
+					<p className='text-article'>{parse(`${dataRef.current.article}`)}</p>
 				</article>
 			</section>
 		</main>
