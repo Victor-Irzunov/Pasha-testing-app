@@ -1,7 +1,5 @@
 .box-form{
 	width: 100%;
-	/* height: 80vh; */
-	/* max-height: 90vh; */
 	display: flex;
 	flex-direction: column;
 	font-size: 1.3em;

@@ -19,11 +19,7 @@ const FormCreate = ({ setIsBool }) => {
 	)
 	const [, setIsImg] = useState(false)
 
-	console.log('textArticle: ', textArticle)
-
-
 	const imageInputRef = useRef()
-
 
 	const selectFile = e => {
 		setIsImg(true)

@@ -3,7 +3,6 @@ import './AboutPage.css'
 import img1 from './images/tester-3.gif'
 import img2 from './images/tester-1.gif'
 import img3 from './images/tester-2.gif'
-// import { FaFacebookF, FaLinkedinIn, FaInstagram, FaTelegramPlane, FaWhatsapp, FaPhoneAlt } from "react-icons/fa"
 import { ThemesContext } from "../../themes/themes"
 import SocialIcon from '../../components/social-icon/SocialIcon'
 import { useLocation } from 'react-router-dom'
@@ -21,7 +20,7 @@ function AboutPage() {
 			<section className='about container' style={{ color: theme.text }}>
 				<div className='about-box-left'>
 					<h2>О нас</h2>
-					<h3>В нашей студии по тестированию ПО работаю программисты с опытом работы более 10 лет. Через нашу команду тестировщиков прошли многие проекты от небольших сайтов до крупных корпоративных приложений. 
+					<h3>В нашей компании "Софтвэр Тест Студио" работают специалисты с опытом работы более 10 лет. Через нашу команду тестировщиков прошли многие проекты от небольших сайтов до крупных корпоративных приложений. Мы любим то что мы делаем, мы делаем продукты лучше, эффективнее и надежнее.
 					</h3>
 					<SocialIcon isTrue={isTrue} />
 				</div>

@@ -79,7 +79,9 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 										setIsChangeWhite(false)
 
 									}}
-								><VscBug className={!isChangeYellow ? 'yellow-bug': 'yellow-bug active'} /></div>
+								>
+									<VscBug className={!isChangeYellow ? 'yellow-bug' : 'yellow-bug active'} />
+								</div>
 								<div className={redClass}
 									onClick={() => {
 										toggleTheme('2')
@@ -88,7 +90,9 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 										setIsChangeWhite(false)
 
 									}}
-								><VscBug className={ !isChangeRed ? 'red-bug': 'red-bug active'} /></div>
+								>
+									<VscBug className={!isChangeRed ? 'red-bug' : 'red-bug active'} />
+								</div>
 								<div className={whiteClass}
 									onClick={() => {
 										toggleTheme('3')
@@ -97,7 +101,9 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 										setIsChangeWhite(true)
 
 									}}
-								><VscBug className={!isChangeWhite ? 'white-bug' : 'white-bug active' } /></div>
+								>
+									<VscBug className={!isChangeWhite ? 'white-bug' : 'white-bug active'} />
+								</div>
 							</div>
 						</div>
 
