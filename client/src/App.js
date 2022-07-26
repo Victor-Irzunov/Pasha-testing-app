@@ -41,7 +41,7 @@ const App = observer(() => {
     check().then(data => {
       user.setIsAuth(true)
       user.setUser(true)
-      user.setData(data)
+      user.setUserData(data)
     }).finally(() => setLoading(false))
   }, [user])
 
@@ -169,17 +169,17 @@ const App = observer(() => {
             <li className={classLi} onClick={openMenu}><Link style={{ color: theme.text }} to="/develop">Разработка сайтов</Link></li>
             <li className={classLi} onClick={openMenu}><Link style={{ color: theme.text }} to="/work">Работа у нас</Link></li>
             <li className={classLi} onClick={openMenu}><Link style={{ color: theme.text }} to="/contact">Контакты</Link></li>
-            {user.isAuth &&
+            {user.isAuth && user.userData.role === 'ADMIN' &&
               <li className={classLi} onClick={openMenu}>
                 <Link style={{ color: theme.text }} to="/message-contact">Сообщение от контакта</Link>
               </li>
             }
-            {user.isAuth &&
+            {user.isAuth && user.userData.role === 'ADMIN' &&
               <li className={classLi} onClick={openMenu}>
                 <Link style={{ color: theme.text }} to="/message-candidat">Сообщение от кандидата</Link>
               </li>
             }
-            {user.isAuth &&
+            {user.isAuth && user.userData.role === 'ADMIN' &&
               <li className={classLi} onClick={openMenu}>
                 <Link style={{ color: theme.text }} to="/admin">Админ</Link>
               </li>

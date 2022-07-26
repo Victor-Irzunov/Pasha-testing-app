@@ -72,9 +72,10 @@ const Auth = observer(() => {
 			if (!active) {
 				login(email, password)
 					.then(data => {
+						console.log('data:', data)
 						user.setUser(user)
-						// user.setIsAuth(true)
-						user.setData(data)
+						user.setIsAuth(true)
+						user.setUserData(data)
 						navigate('/')
 					})
 					// .finally(() => navigate('/'))
@@ -82,7 +83,7 @@ const Auth = observer(() => {
 				registration(email, password).then(data => {
 					user.setUser(user)
 					// user.setIsAuth(true)
-					user.setData(data)
+					user.setUserData(data)
 					navigate('/')
 				})
 			}

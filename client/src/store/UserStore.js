@@ -19,7 +19,7 @@ export default class UserStore {
 	setUser(user) {
 		this._user = user
 	}
-	setData(data) {
+	setUserData(data) {
 		this._userData = data
 	}
 	setIsActive(data) {
