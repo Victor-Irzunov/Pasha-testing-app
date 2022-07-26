@@ -21,7 +21,6 @@ export const getOne = async (id) => {
 }
 
 export const editOneArticle = async (obj) => {
-	console.log('obj:: ', obj)
 	const { data } = await $authHost.put('api/admin', obj)
 	return data
 }

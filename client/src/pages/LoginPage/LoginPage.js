@@ -70,37 +70,22 @@ const Auth = observer(() => {
 		e.preventDefault()
 		try {
 			if (!active) {
-				login(email, password).then(data => {
-					user.setUser(user)
-					user.setIsAuth(true)
-					user.setData(data)
-					navigate('/')
-				})
-				// if (user.isAuth) {
-				// 	console.log('------------>')
-				// 	navigate('/')
-				// }
+				login(email, password)
+					.then(data => {
+						user.setUser(user)
+						// user.setIsAuth(true)
+						user.setData(data)
+						navigate('/')
+					})
+					// .finally(() => navigate('/'))
 			} else {
 				registration(email, password).then(data => {
 					user.setUser(user)
-					user.setIsAuth(true)
+					// user.setIsAuth(true)
 					user.setData(data)
 					navigate('/')
 				})
-				// if (user.isAuth) {
-				// 	console.log('----2-------->')
-				// 	navigate('/')
-				// }
 			}
-			// if (user.isAuth) {
-			// 	console.log('------------>')
-			// 	navigate('/')
-			// }
-
-
-
-
-
 		} catch (e) {
 			console.log('err in LoginPage clinckform', e)
 		}
@@ -115,7 +100,7 @@ const Auth = observer(() => {
 			setSpanClassList(i => !i)
 		}
 	}
-	
+
 
 	const toggleBox = () => setActive(i => !i)
 
@@ -166,12 +151,12 @@ const Auth = observer(() => {
 											passwordHandler(e)
 										}}
 									/>
-									<span className="text-login"  style={{ color: theme.text }}>Пароль</span>
+									<span className="text-login" style={{ color: theme.text }}>Пароль</span>
 									<span className="show-btn">
-									
-										{spanClassList ? <FaRegEye onClick={showBtn}/> : <FaRegEyeSlash onClick={showBtn}/>}
-										
-										
+
+										{spanClassList ? <FaRegEye onClick={showBtn} /> : <FaRegEyeSlash onClick={showBtn} />}
+
+
 									</span>
 									<span className="line" style={{ background: theme.text }}></span>
 								</div>
@@ -194,7 +179,7 @@ const Auth = observer(() => {
 					</form>
 					<form>
 						<div className={box2Toggle}>
-							<h2  style={{ color: theme.text }}>Павел здесь Вам необходимо зарегистрироваться</h2>
+							<h2 style={{ color: theme.text }}>Павел здесь Вам необходимо зарегистрироваться</h2>
 							<div className="row100">
 								<div className="col">
 									<div className="input__box">
@@ -231,8 +216,8 @@ const Auth = observer(() => {
 										/>
 										<span className="text-login" style={{ color: theme.text }}>&nbsp;Пароль</span>
 										<span className="show-btn">
-											
-											{spanClassList ? <FaRegEye onClick={showBtn}/> : <FaRegEyeSlash onClick={showBtn}/>}
+
+											{spanClassList ? <FaRegEye onClick={showBtn} /> : <FaRegEyeSlash onClick={showBtn} />}
 										</span>
 										<span className="line" style={{ background: theme.text }}></span>
 									</div>
@@ -246,7 +231,7 @@ const Auth = observer(() => {
 									<button
 										type="submit"
 										disabled={!formValid}
-										onClick={(e)=>clickBtnForm(e)}
+										onClick={(e) => clickBtnForm(e)}
 										className={formValid ? 'btn__submit' : undefined}
 										style={{ background: theme.text }}
 									>Зарегистрироваться</button>
