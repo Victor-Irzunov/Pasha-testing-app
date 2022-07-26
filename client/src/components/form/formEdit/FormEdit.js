@@ -57,9 +57,6 @@ const FormEdit = ({ setIsBool }) => {
 	const sendFormGetOne = e => {
 		e.preventDefault()
 		getOne(idGetOne).then(data => {
-			console.log('data:', data)
-			console.log(typeof data.article)
-
 			dataRef.current = data
 			setTitle(data.title)
 			setTextArticle(data.article)
