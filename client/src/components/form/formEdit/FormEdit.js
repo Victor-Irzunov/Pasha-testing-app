@@ -2,6 +2,8 @@ import React, { useState, useRef, useContext } from 'react'
 import { getOne, editOneArticle } from '../../../http/adminAPI.js'
 import BtnForm from '../../btnForm/BtnForm.js'
 import { ThemesContext } from '../../../themes/themes.js'
+import parse from 'html-react-parser'
+import CKeditor from '../../ckeditor/CKeditor'
 
 import './FormEdit.css'
 
@@ -20,6 +22,8 @@ const FormEdit = ({ setIsBool }) => {
 	)
 	const [isImg, setIsImg] = useState(false)
 	const imageInputRef = useRef()
+	const dataRef = useRef({})
+
 
 	const selectFile = e => {
 		setIsImg(true)
@@ -46,14 +50,28 @@ const FormEdit = ({ setIsBool }) => {
 			})
 	}
 
+
+
+
+
 	const sendFormGetOne = e => {
 		e.preventDefault()
 		getOne(idGetOne).then(data => {
+			console.log('data:', data)
+			console.log(typeof data.article)
+
+			dataRef.current = data
 			setTitle(data.title)
 			setTextArticle(data.article)
 			setImg(data.img)
+			console.log(parse(`${dataRef.current.article}`))
 		})
 	}
+
+
+
+
+
 
 	const sendFormEditArticle = e => {
 		e.preventDefault()
@@ -66,20 +84,19 @@ const FormEdit = ({ setIsBool }) => {
 		}
 		editOneArticle(formData)
 			.then(data => {
-			admin.setMessage(data.message)
-			setIsBool(true)
-			setTitle('')
-			setTextArticle('')
-			setImgSrc({ imageArray: [] })
-			imageInputRef.current.value = ""
-		}).finally(() => {
-			setTimeout(() => {
-				setIsBool(false)
-			}, 1500)
-		})
+				admin.setMessage(data.message)
+				setIsBool(true)
+				setTitle('')
+				setTextArticle('')
+				setImgSrc({ imageArray: [] })
+				imageInputRef.current.value = ""
+			}).finally(() => {
+				setTimeout(() => {
+					setIsBool(false)
+				}, 1500)
+			})
 	}
 
-	console.log('file: ', file)
 
 	return (
 		<form>
@@ -93,7 +110,6 @@ const FormEdit = ({ setIsBool }) => {
 						name='editOne'
 						value={idGetOne}
 						onChange={e => setGetOne(e.target.value)}
-						// placeholder="Введите id статьи"
 						id='edit-input'
 					/>
 					<button
@@ -111,7 +127,6 @@ const FormEdit = ({ setIsBool }) => {
 					name='title'
 					value={title}
 					onChange={e => setTitle(e.target.value)}
-					// placeholder="Введите название статьи"
 					id='h2-input'
 				/>
 
@@ -177,13 +192,14 @@ const FormEdit = ({ setIsBool }) => {
 
 				</div>
 				<label htmlFor="article">Изменить текст статьи:</label>
-				<textarea
+				{/* <textarea
 					id='article'
 					value={textArticle}
 					multiple
 					name='article'
 					onChange={e => setTextArticle(e.target.value)}
-				/>
+				/> */}
+				<CKeditor setTextArticle={setTextArticle} data={textArticle} />
 
 				<BtnForm fun={sendFormEditArticle} title={'Изменить'} color={'#00e9f3'} />
 

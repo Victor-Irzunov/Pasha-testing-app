@@ -6,7 +6,7 @@ import './CKeditor.css'
 
 
 
-function CKeditor({ setTextArticle }) {
+function CKeditor({ setTextArticle , data}) {
 
 	const handleOnChange = (e, editor) => {
 		setTextArticle(editor.getData())
@@ -17,6 +17,7 @@ function CKeditor({ setTextArticle }) {
 			<CKEditor
 				editor={ClassicEditor}
 				onChange={handleOnChange}
+				data={data}
 			/>
 		</div>
 	)

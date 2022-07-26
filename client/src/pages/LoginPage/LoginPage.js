@@ -82,7 +82,7 @@ const Auth = observer(() => {
 			} else {
 				registration(email, password).then(data => {
 					user.setUser(user)
-					// user.setIsAuth(true)
+					user.setIsAuth(true)
 					user.setUserData(data)
 					navigate('/')
 				})
