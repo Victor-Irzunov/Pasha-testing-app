@@ -2,26 +2,35 @@ import React, { useContext, useState } from 'react'
 import './ServicePage.css'
 import { ThemesContext } from "../../themes/themes"
 import { observer } from "mobx-react-lite"
-import { AiFillCodeSandboxCircle, AiFillBug, AiOutlineStock, AiOutlineCheck,AiOutlineMobile } from "react-icons/ai";
+import ModalWindow from '../../components/modals/ModalWindow'
+import { AiFillCodeSandboxCircle, AiFillBug, AiOutlineStock, AiOutlineCheck, AiOutlineMobile } from "react-icons/ai";
 import { TbBrowserCheck } from "react-icons/tb";
 
 const ServicePage = observer(() => {
-
 	const { user } = useContext(ThemesContext)
-	// const [isActive, setIsActive] = useState(false)
+	const [modalIsOpen, setIsOpen] = useState(false)
+	const [isSendBool, setSendBool] = useState(false)
+	const [textModal, setTextModal] = useState('')
 
-
-	// const toggleClass = (e) => {
-	// 	setIsActive(i => !i)
-	// }
-
+	function openModalData() {
+		setIsOpen(true)
+		setSendBool(true)
+	}
+	function closeModal() {
+		setIsOpen(false)
+		setSendBool(false)
+	}
 
 	return (
 		<main className='main'>
 			<div className={user.isActive ? 'bu-service active' : 'bu-service'}></div>
 			<section className={user.isActive ? 'main-service-section active' : 'main-service-section'}>
-
-
+				<ModalWindow
+					modalIsOpen={modalIsOpen}
+					isSendBool={isSendBool}
+					textModal={textModal}
+					closeModal={closeModal}
+				/>
 				<div className="contain">
 					<div className="card-service">
 						<div className="box-card">
@@ -30,7 +39,6 @@ const ServicePage = observer(() => {
 									<AiFillCodeSandboxCircle />
 								</div>
 								<h3>Функциональное<br /> тестирование</h3>
-								{/* <h4>от <sup>$</sup>250</h4> */}
 								<h4>цена: договорная</h4>
 								<h5>Проверка функциональности, гарантия бесперебойной работы:</h5>
 								<ul>
@@ -40,7 +48,10 @@ const ServicePage = observer(() => {
 									<li><AiOutlineCheck /> <span>smoke тестирование</span></li>
 									<li><AiOutlineCheck /> <span>приемочное тестирование</span></li>
 								</ul>
-								<a href="#">Заказать</a>
+								<button onClick={() => {
+									openModalData()
+									setTextModal('функциональное тестирование')
+								}} >Заказать</button>
 							</div>
 						</div>
 					</div>
@@ -51,7 +62,6 @@ const ServicePage = observer(() => {
 									<AiOutlineStock />
 								</div>
 								<h3>Тестирование<br /> производительности</h3>
-								{/* <h4>от <sup>$</sup>500</h4> */}
 								<h4>цена: договорная</h4>
 								<h5>Проверка системы на большие нагрузки:</h5>
 								<ul>
@@ -61,7 +71,10 @@ const ServicePage = observer(() => {
 									<li><AiOutlineCheck /> <span>smoke тестирование</span></li>
 									<li><AiOutlineCheck /> <span>тестирование стабильности</span></li>
 								</ul>
-								<a href="#">Заказать</a>
+								<button onClick={() => {
+									openModalData()
+									setTextModal('тестирование производительности')
+								}} >Заказать</button>
 							</div>
 						</div>
 					</div>
@@ -72,7 +85,6 @@ const ServicePage = observer(() => {
 									<TbBrowserCheck />
 								</div>
 								<h3>Тестирование<br /> веб приложений</h3>
-								{/* <h4>от <sup>$</sup>1000</h4> */}
 								<h4>цена: договорная</h4>
 								<h5>Виды тестирования веб-приложений:</h5>
 								<ul>
@@ -82,7 +94,10 @@ const ServicePage = observer(() => {
 									<li><AiOutlineCheck /> <span>тестирование удобства использования</span></li>
 									<li><AiOutlineCheck /> <span>тестирование безопасности</span></li>
 								</ul>
-								<a href="#">Заказать</a>
+								<button onClick={() => {
+									openModalData()
+									setTextModal('тестирование веб приложений')
+								}} >Заказать</button>
 							</div>
 						</div>
 					</div>
@@ -93,7 +108,6 @@ const ServicePage = observer(() => {
 									<AiFillBug />
 								</div>
 								<h3>Автоматизация<br /> тестирования</h3>
-								{/* <h4>от <sup>$</sup>1700</h4> */}
 								<h4>цена: договорная</h4>
 								<h5>Вид тестирования:</h5>
 								<ul>
@@ -103,7 +117,10 @@ const ServicePage = observer(() => {
 									<li><AiOutlineCheck /> <span>тестирование удобства использования</span></li>
 									<li><AiOutlineCheck /> <span>снижает затраты на обеспечение качества</span></li>
 								</ul>
-								<a href="#">Заказать</a>
+								<button onClick={() => {
+									openModalData()
+									setTextModal('автоматизация тестирования')
+								}} >Заказать</button>
 							</div>
 						</div>
 					</div>
@@ -122,7 +139,10 @@ const ServicePage = observer(() => {
 									<li><AiOutlineCheck /> <span>сбор статистики</span></li>
 									<li><AiOutlineCheck /> <span>проверка на сбои при отображении на экранах разного разрешения</span></li>
 								</ul>
-								<a href="#">Заказать</a>
+								<button onClick={() => {
+									openModalData()
+									setTextModal('мобильное тестирование')
+								}} >Заказать</button>
 							</div>
 						</div>
 					</div>

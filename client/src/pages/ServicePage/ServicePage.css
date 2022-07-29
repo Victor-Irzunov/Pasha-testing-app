@@ -145,7 +145,7 @@
 }
 
 
-.contain .card-service .box-card .content a {
+.contain .card-service .box-card .content button {
 	position: relative;
 	display: inline-block;
 	padding: 8px 20px;
@@ -177,37 +177,37 @@
 	color: #e0d90b;
 }
 
-.contain .card-service:nth-child(1) .box-card .content a,
+.contain .card-service:nth-child(1) .box-card .content button,
 .contain .card-service:nth-child(1) .box-card .content .icon {
 	background: #2196F3;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.contain .card-service:nth-child(2) .box-card .content a,
+.contain .card-service:nth-child(2) .box-card .content button,
 .contain .card-service:nth-child(2) .box-card .content .icon {
 	background: #E91E63;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.contain .card-service:nth-child(3) .box-card .content a,
+.contain .card-service:nth-child(3) .box-card .content button,
 .contain .card-service:nth-child(3) .box-card .content .icon {
 	background: #97dc47;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.contain .card-service:nth-child(4) .box-card .content a,
+.contain .card-service:nth-child(4) .box-card .content button,
 .contain .card-service:nth-child(4) .box-card .content .icon {
 	background: #6b10d3;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.contain .card-service:nth-child(5) .box-card .content a,
+.contain .card-service:nth-child(5) .box-card .content button,
 .contain .card-service:nth-child(5) .box-card .content .icon {
 	background: #e0d90b;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.contain .card-service:nth-child(6) .box-card .content a,
+.contain .card-service:nth-child(6) .box-card .content button,
 .contain .card-service:nth-child(6) .box-card .content .icon {
 	background: #6b10d3;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);

@@ -187,7 +187,12 @@ header {
 	z-index: 2;
 }
 
-
+.img-icon{
+	width: 6em;
+	position: absolute;
+	top: 0;
+	right: 13em;
+}
 
 
 

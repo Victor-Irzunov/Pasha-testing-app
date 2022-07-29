@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { ThemesContext } from '../../../themes/themes'
 import { sendMessageContact, newIsContact } from '../../../http/contactMessageAPI'
 
-function FormSendMail() {
+function FormSendMail({textModal}) {
 	const { theme } = useContext(ThemesContext)
 	const [name, setName] = useState('')
 	const [mail, setMail] = useState('')
@@ -36,7 +36,7 @@ function FormSendMail() {
 	return (
 		<div className="contact-form">
 			<form onSubmit={e => sendFormMessage(e)}>
-				<h2 style={{ color: theme.text }}>Напишите нам</h2>
+				<h2 style={{ color: theme.text }}>{!textModal ? 'Напишите нам' : `Интересует ${textModal}`}</h2>
 				<div className="input-box" >
 					<input
 						type="text"

@@ -17,6 +17,7 @@ const ModalWindow = (props) => {
 		formDelete,
 		colorH2,
 		isSendBool,
+		textModal
 	} = props
 	const { admin } = useContext(ThemesContext)
 	const [isBool, setIsBool] = useState(false)
@@ -42,7 +43,7 @@ const ModalWindow = (props) => {
 				{formAdd && <FormCreate setIsBool={setIsBool} />}
 				{formEdit && <FormEdit setIsBool={setIsBool} />}
 				{formDelete && <FormDelete setIsBool={setIsBool} />}
-				{isSendBool && <FormSendMail />}
+				{isSendBool && <FormSendMail textModal={textModal} />}
 			</div>
 		</div >
 	)

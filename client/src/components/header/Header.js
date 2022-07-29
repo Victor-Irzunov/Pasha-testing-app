@@ -10,10 +10,11 @@ import { getIsContact } from "../../http/contactMessageAPI"
 import { getIsCandidat } from '../../http/candidateAPI'
 import { MdOutlineMarkEmailUnread } from "react-icons/md"
 import { FaUserTie, FaSun, FaMoon } from "react-icons/fa"
-import { VscBug} from "react-icons/vsc"
+import { VscBug } from "react-icons/vsc"
 import { useLocation } from 'react-router-dom'
 import './Header.css'
 import logo from './images/logo.png'
+import imgIcon from './images/icon.jpeg'
 
 const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumTheme }) => {
 
@@ -63,7 +64,7 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 					</Link>
 				}
 				{
-					user.isAuth && admin.isCandidat && <Link to="/message-candidat"className='message-icon2' >
+					user.isAuth && admin.isCandidat && <Link to="/message-candidat" className='message-icon2' >
 						<FaUserTie className='icon-mail' />
 					</Link>
 				}
@@ -130,6 +131,9 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 						}
 					</>
 				}
+
+				<img src={imgIcon} className='img-icon' />
+
 				<div
 					style={{ color: theme.text }}
 					className={isActive ? "toggle active" : "toggle"}
