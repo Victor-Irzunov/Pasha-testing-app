@@ -1,12 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef,useContext } from 'react'
 import './ModalData.css'
 import { getOne } from '../../http/adminAPI'
+import { observer } from "mobx-react-lite"
+import { ThemesContext } from "../../themes/themes"
 import parse from 'html-react-parser'
 import { AiFillCloseSquare } from "react-icons/ai"
 
-function ModalData({ closeModalData, modalIsOpen, id }) {
+const ModalData = observer(({ closeModalData, modalIsOpen, id }) =>{
 	const [isActive, setIsActive] = useState(false)
-	const [data, setData] = useState({})
+	const { user } = useContext(ThemesContext)
+	const [, setData] = useState({})
 	const dataRef = useRef({})
 
 	useEffect(() => {
@@ -29,13 +32,17 @@ function ModalData({ closeModalData, modalIsOpen, id }) {
 
 				<article className=''>
 					<h2>{dataRef.current.title}</h2>
-					<p className='id-data-modal'>id: {dataRef.current.id}</p>
+					{
+						user.isAuth && user.userData.role === 'ADMIN' && <p className='id-data-modal'>
+						id: {dataRef.current.id}
+					</p>
+					}
 					{dataRef.current.img && <img src={process.env.REACT_APP_API_URL + dataRef.current.img} />}
 					<p className='text-article'>{parse(`${dataRef.current.article}`)}</p>
 				</article>
 			</section>
 		</main>
 	)
-}
+})
 
 export default ModalData
