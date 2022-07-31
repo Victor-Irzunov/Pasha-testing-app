@@ -32,11 +32,14 @@ const AdminArticle = sequelize.define('article', {
 	img: {
 		type: DataTypes.STRING, allowNull: true
 	},
+	idx: {
+		type: DataTypes.INTEGER, allowNull: true
+	},
 })
 
 const Candidate = sequelize.define('candidate', {
 	id: {
-		type: DataTVictor-Irzunov/pasha-appypes.INTEGER, primaryKey: true, autoIncrement: true
+		type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true
 	},
 	name: {
 		type: DataTypes.STRING, allowNull: false
