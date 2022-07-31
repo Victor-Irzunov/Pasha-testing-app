@@ -32,6 +32,9 @@ const AdminArticle = sequelize.define('article', {
 	img: {
 		type: DataTypes.STRING, allowNull: true
 	},
+	idx: {
+		type: DataTypes.INTEGER
+	}
 })
 
 const Candidate = sequelize.define('candidate', {
