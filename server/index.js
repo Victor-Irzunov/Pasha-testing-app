@@ -39,14 +39,14 @@ app.use('/api', router)
 // 	next();
 //  });
 
-app.use(
-	helmet.contentSecurityPolicy({
-		directives: {
-			"script-src": ["'self'", "https://widget.replain.cc"],
-			// "script-src-elem": ["'self'", "https://widget.replain.cc/dist/client.js", "'unsafe-inline'"]
-		},
-	})
-)
+// app.use(
+// 	helmet.contentSecurityPolicy({
+// 		directives: {
+// 			"script-src": ["'self'", "https://widget.replain.cc"],
+// 			"script-src-elem": ["'self'", "https://widget.replain.cc/dist/client.js", "'unsafe-inline'"]
+// 		},
+// 	})
+// )
 // app.use(helmet({
 // 	contentSecurityPolicy: {
 // 		directives: {
