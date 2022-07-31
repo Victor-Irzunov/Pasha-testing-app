@@ -21,6 +21,7 @@ const DataPage = observer(() => {
 	useEffect(() => {
 		getAll()
 			.then(data => {
+				console.log('data--->>> ', data)
 				setData(data.sort((a, b) => a.idx - b.idx))
 			})
 	}, [])
