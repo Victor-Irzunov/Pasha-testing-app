@@ -69,16 +69,10 @@ class AdminController {
 	async changeOrderArticles(req, res, next) {
 		try {
 			const data = req.body
-
+			console.log('data: >>>>: ', data)
 			data.map((obj, idx) => {
 				models.AdminArticle.update({ idx: idx }, { where: { id: obj.id } })
 			})
-			// for (let i of data) {
-			// 	const articles = await models.AdminArticle.update({ idx: })
-			// 	console.log('------i: ', i)
-			// }
-
-			// console.log('-------------:::::> articles: ', articles)
 			return res.status(200).json({ message: `Изменено успешно` })
 		}
 		catch (e) {
