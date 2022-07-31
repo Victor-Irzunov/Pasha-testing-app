@@ -7,6 +7,8 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	padding-top: 1em;
+	position: relative;
 }
 
 .data-page h2 {
@@ -18,9 +20,7 @@
 .data-page-ul {
 	width: 100%;
 	height: 70vh;
-	/* overflow-y: scroll; */
 	position: relative;
-
 }
 
 .data-page-ul li {
@@ -81,4 +81,14 @@
 
 .data-page-ul li:hover:before {
 	transform: scaleX(1);
+}
+
+.data-btn{
+	position: absolute;
+	top: 0;
+	right: 2em;
+	padding: 5px 10px 5px 10px;
+	background: transparent;
+	border: 1px solid #24ff0b;
+	color: #24ff0b;
 }
