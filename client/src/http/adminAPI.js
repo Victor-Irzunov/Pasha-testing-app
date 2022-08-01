@@ -1,7 +1,7 @@
 import { $authHost, $host } from "./index"
 
 
-export const createArticle = async ( obj ) => {
+export const createArticle = async (obj) => {
 	const { data } = await $authHost.post('api/admin', obj)
 	return data
 }
@@ -25,6 +25,6 @@ export const editOneArticle = async (obj) => {
 	return data
 }
 export const changeOrderArticles = async (obj) => {
-	const { data } = await $authHost.get('api/admin/change-order')
+	const { data } = await $authHost.put('api/admin/change/order', obj)
 	return data
 }
