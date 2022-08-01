@@ -16,9 +16,9 @@ class AdminController {
 				const __dirname = decodeURI(new URL('.', import.meta.url).pathname)
 				let fileName = uuidv4() + ".jpg"
 				img.img.mv(path.resolve(__dirname, '..', 'static', fileName))
-				await models.AdminArticle.create({ title, article, img: fileName })
+				await models.AdminArticle.create({ title, article, img: fileName, idx: 0 })
 			} else {
-				await models.AdminArticle.create({ title, article })
+				await models.AdminArticle.create({ title, article, idx: 0  })
 			}
 
 			return res.status(201).json({
