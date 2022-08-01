@@ -33,7 +33,7 @@ const AdminArticle = sequelize.define('article', {
 		type: DataTypes.STRING, allowNull: true
 	},
 	idx: {
-		type: DataTypes.INTEGER
+		type: DataTypes.INTEGER, allowNull: true
 	}
 })
 
