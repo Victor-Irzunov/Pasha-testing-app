@@ -19,7 +19,7 @@ const User = sequelize.define('user', {
 	},
 })
 
-const AdminArticle = sequelize.define('article', {
+const AdminArticle = sequelize.define('articles', {
 	id: {
 		type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true
 	},
@@ -33,7 +33,7 @@ const AdminArticle = sequelize.define('article', {
 		type: DataTypes.STRING, allowNull: true
 	},
 	idx: {
-		type: DataTypes.INTEGER
+		type: DataTypes.INTEGER, allowNull: true
 	}
 })
 
