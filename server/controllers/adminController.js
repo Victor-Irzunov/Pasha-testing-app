@@ -94,7 +94,7 @@ class AdminController {
 			// 	const index = data.indexOf(i)
 			// 	await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
 			// }
-			const a = await models.AdminArticle.findAll({ where: { idx: 1 } })
+			const a = await models.AdminArticle.findAll()
 
 			return res.status(200).json(a)
 		}
