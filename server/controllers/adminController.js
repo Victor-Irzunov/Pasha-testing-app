@@ -77,8 +77,8 @@ class AdminController {
 
 			// return res.status(200).json({ message: `Сохранено успешно` })
 
-			const a = await models.AdminArticle.findOne({ where: { id: 4 } })
-			return res.status(200).json(a)
+			const articles = await models.AdminArticle.findOne({ where: { id: 4 } })
+			return res.status(200).json(articles)
 		}
 		catch (e) {
 			next(ApiError.badRequest(e.message))
