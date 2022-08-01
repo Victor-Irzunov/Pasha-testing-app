@@ -16,7 +16,7 @@ const MessageContactPage = observer(() => {
 						admin.setIsMail(false)
 					})
 			})
-	}, [admin.isMail])
+	}, [admin.isMail, admin])
 
 
 

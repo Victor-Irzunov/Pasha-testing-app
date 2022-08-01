@@ -29,14 +29,17 @@ function AboutPage() {
 						<img
 							src={img1}
 							className='img1'
+							alt='картинка работника мужчины'
 						/>
 						<img
 							src={img2}
 							className='img2'
+							alt='картинка работника женщины'
 						/>
 						<img
 							src={img3}
 							className='img3'
+							alt='картинка работника мужчины с бородой'
 						/>
 					</div>
 				</div>

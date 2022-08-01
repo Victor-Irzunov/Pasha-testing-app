@@ -132,7 +132,7 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 					</>
 				}
 
-				<img src={imgIcon} className='img-icon' />
+				<img src={imgIcon} className='img-icon' alt='картинка логотип тест' />
 
 				<div
 					style={{ color: theme.text }}

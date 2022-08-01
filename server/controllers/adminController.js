@@ -67,26 +67,18 @@ class AdminController {
 
 
 	async changeOrderArticles(req, res, next) {
-		console.log('>>>>>>>>>>>>>>>>>>>>>.')
 		try {
 			const data = req.body
 
-			console.log('.....data: ', data)
-
 			for (let i of data) {
-				console.log('......i.id:', i.id)
 				const index = data.indexOf(i)
-				console.log('index::::::...::::', index)
-				const a = await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
-				console.log('_----------->>a: ', a)
+				await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
 			}
 
-			// await models.AdminArticle.save()
-			return res.status(200).json({ message: `Изменено успешно` })
+			return res.status(200).json({ message: `Сохранено успешно` })
 		}
 		catch (e) {
 			next(ApiError.badRequest(e.message))
-
 		}
 	}
 
@@ -103,9 +95,6 @@ class AdminController {
 			} else {
 				await models.AdminArticle.update({ title, article, img: null }, { where: { id } })
 			}
-
-
-
 			return res.json({ message: `Изменено успешно` })
 		}
 		catch (e) {

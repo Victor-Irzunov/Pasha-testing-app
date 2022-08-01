@@ -27,7 +27,7 @@ function SocialIcon({ openModalData, isTrue }) {
 				</a>
 				{
 					!isTrue &&
-					<a className='social' href="#"
+					<a className='social' href="/#"
 						onClick={openModalData}
 						style={{ color: theme.text }}
 					>
@@ -36,12 +36,12 @@ function SocialIcon({ openModalData, isTrue }) {
 				}
 				<a className='social'
 					style={{ color: theme.text }}
-					href="#"
+					href="/#"
 					target="_blanck"
 				><FaLinkedinIn /></a>
 				<a className='social'
 					style={{ color: theme.text }}
-					href="#"
+					href="/#"
 					target="_blanck"
 				><FaInstagram /></a>
 				<a className='social'

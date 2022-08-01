@@ -17,7 +17,7 @@ const CandidatMessagePage = observer(() => {
 						admin.setIsCandidat(false)
 					})
 			})
-	}, [admin.isCandidat])
+	}, [admin.isCandidat, admin])
 
 
 

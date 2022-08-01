@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { getAll } from '../../http/adminAPI.js'
 import ModalData from '../../components/modalData/ModalData.js'
-import UserStore from '../../store/UserStore'
+// import UserStore from '../../store/UserStore'
 import { ThemesContext } from '../../themes/themes'
 import { changeOrderArticles } from '../../http/adminAPI'
 import { observer } from "mobx-react-lite"
@@ -62,7 +62,7 @@ const DataPage = observer(() => {
 						<Reorder.Group as='ul' axys='y' values={data} onReorder={setData} className='data-page-ul'>
 							{data.map(obj => {
 								return (
-									<DataItemAdmin obj={obj} openModalData={openModalData} setId={setId} user={user} />
+									<DataItemAdmin obj={obj} key={obj.id} openModalData={openModalData} setId={setId} user={user} />
 								)
 							})}
 						</Reorder.Group>
@@ -70,7 +70,7 @@ const DataPage = observer(() => {
 						<ul className='data-page-ul'>
 							{data.map(obj => {
 								return (
-									<DataItemUser obj={obj} openModalData={openModalData} setId={setId} user={user} />
+									<DataItemUser obj={obj} key={obj.id} openModalData={openModalData} setId={setId} user={user} />
 								)
 							})}
 						</ul>

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { BsFillGeoFill } from 'react-icons/bs'
 import { FaPhoneAlt } from 'react-icons/fa'
 import { GrMailOption } from 'react-icons/gr'
@@ -9,32 +9,7 @@ import './ContactPage.css'
 
 function ContactPage() {
 	const { theme } = useContext(ThemesContext)
-	// const [name, setName] = useState('')
-	// const [mail, setMail] = useState('')
-	// const [text, setText] = useState('')
-	// const [message, setMessage] = useState('')
-	// const [isActive, setActive] = useState(false)
 
-	// const sendFormMessage = (e) => {
-	// 	e.preventDefault()
-	// 	const formData = new FormData()
-	// 	formData.append('name', name)
-	// 	formData.append('mail', mail)
-	// 	formData.append('text', text)
-	// 	sendMessageContact(formData)
-	// 		.then(data => {
-	// 			setActive(true)
-	// 			setMessage(data.message)
-	// 			setName('')
-	// 			setMail('')
-	// 			setText('')
-	// 			newIsContact()
-	// 		}).finally(() => {
-	// 			setTimeout(() => {
-	// 				setActive(false)
-	// 			}, 3000)
-	// 		})
-	// }
 
 	return (
 		<main className='main'>
@@ -55,6 +30,7 @@ function ContactPage() {
 									href='https://goo.gl/maps/P6B47ENEcWrJeqTi8'
 									target='_blank'
 									style={{ color: theme.text }}
+									rel="noreferrer"
 								>
 									<p> ул. Авиационная д.49</p>
 								</a>

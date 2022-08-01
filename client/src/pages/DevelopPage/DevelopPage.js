@@ -30,13 +30,14 @@ function DevelopPage() {
 				<section className='develop-content container'>
 					<div className='scale-in-center'>
 						<p className='' style={{ color: theme.text }}>
-							Наш партнер компания <span className='logo-vi-tech'><a href='https://vi-tech.by' target='_blank'
+							Наш партнер компания <span className='logo-vi-tech'><a href='https://vi-tech.by' target='_blank' rel="noreferrer"
 								style={{ color: theme.text }}
 							>VI:TECH </a></span>предоставляет услугу по разработке сайтов и приложений. Команда разработчиков делают продающие сайты с уникальным дизайном, а также многофункциональные приложения. Ознакомиться с ценами и узнать подробнее об услугах Вы можете посетив сайт компании.
 						</p>
 						<a href='https://vi-tech.by'
 							target='_blank'
 							className='develop-link'
+							rel="noreferrer"
 						>
 							Перейти на официальный сайт компании VI:TECH
 						</a>
