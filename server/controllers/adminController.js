@@ -18,7 +18,7 @@ class AdminController {
 				img.img.mv(path.resolve(__dirname, '..', 'static', fileName))
 				await models.AdminArticle.create({ title, article, img: fileName, idx: 0 })
 			} else {
-				await models.AdminArticle.create({ title, article, idx: 0  })
+				await models.AdminArticle.create({ title, article, idx: 0 })
 			}
 
 			return res.status(201).json({
@@ -89,14 +89,13 @@ class AdminController {
 
 	async change(req, res, next) {
 		try {
-			// const data = req.body
-			// for (let i of data) {
-			// 	const index = data.indexOf(i)
-			// 	await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
-			// }
-			const a = await models.AdminArticle.findAll()
+			const data = req.body
+			for (let i of data) {
+				const index = data.indexOf(i)
+				await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
+			}
 
-			return res.status(200).json(a)
+			return res.json({ message: `Сохранено успешно` })
 		}
 		catch (e) {
 			next(ApiError.badRequest(e.message))
