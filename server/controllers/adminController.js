@@ -77,7 +77,7 @@ class AdminController {
 
 			// return res.status(200).json({ message: `Сохранено успешно` })
 
-			const a = await models.AdminArticle.findOne({ where: { idx: 1 } })
+			const a = await models.AdminArticle.findOne({ where: { id: 4 } })
 			return res.status(200).json(a)
 		}
 		catch (e) {
