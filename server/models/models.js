@@ -31,9 +31,6 @@ const AdminArticle = sequelize.define('articles', {
 	},
 	img: {
 		type: DataTypes.STRING, allowNull: true
-	},
-	idx: {
-		type: DataTypes.INTEGER, allowNull: true
 	}
 })
 

@@ -67,27 +67,24 @@ class AdminController {
 
 
 	async changeOrderArticles(req, res, next) {
-		console.log('---------->')
 		try {
 			const data = req.body
 			// data.map((obj, idx) => {
 			// 	models.AdminArticle.update({ idx: idx }, { where: { id: obj.id } })
 			// })
-			console.log('data---> ', data)
 			for (let i of data) {
-				console.log('i....> ', i)
 
 				const index = data.indexOf(i)
-				console.log('index: ', index)
-				const a = await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
-				console.log('a::::....>', a)
+				await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
 			}
 
 
 			return res.status(200).json({ message: `Изменено успешно` })
 		}
 		catch (e) {
+			console.log('err---ror: ', e)
 			next(ApiError.badRequest(e.message))
+			
 		}
 	}
 
