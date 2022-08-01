@@ -92,7 +92,7 @@ class AdminController {
 			const data = req.body
 			for (let i of data) {
 				const index = data.indexOf(i)
-				await models.AdminArticle.update({ where: { id: i.id }, attributes: ['idx', 'NEW_COLUMN'] }, {idx: index})
+				await models.AdminArticle.findOne({ where: { id: i.id }, attributes: ['idx', 'NEW_COLUMN'] })
 			}
 
 			return res.json({ message: `Сохранено успешно` })
