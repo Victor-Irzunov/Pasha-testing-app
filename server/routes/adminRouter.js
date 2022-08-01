@@ -9,7 +9,7 @@ router.get('/articles', adminController.getAll)
 router.delete('/delete/:id', checkRole('ADMIN'), adminController.deleteOne)
 router.get('/:id', adminController.getOne)
 router.put('/', checkRole('ADMIN'), adminController.editOneArticle)
-router.put('/change-order', checkRole('ADMIN'), adminController.changeOrderArticles)
+router.get('/change-order', checkRole('ADMIN'), adminController.changeOrderArticles)
 
 
 export default router
