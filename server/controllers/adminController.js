@@ -68,14 +68,17 @@ class AdminController {
 
 	async changeOrderArticles(req, res, next) {
 		try {
-			const data = req.body
+			// const data = req.body
 
-			for (let i of data) {
-				const index = data.indexOf(i)
-				await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
-			}
+			// for (let i of data) {
+			// 	const index = data.indexOf(i)
+			// 	await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
+			// }
 
-			return res.status(200).json({ message: `Сохранено успешно` })
+			// return res.status(200).json({ message: `Сохранено успешно` })
+
+			const a = await models.AdminArticle.findOne({ where: { id: 1 } })
+			return res.status(200).json(a)
 		}
 		catch (e) {
 			next(ApiError.badRequest(e.message))
