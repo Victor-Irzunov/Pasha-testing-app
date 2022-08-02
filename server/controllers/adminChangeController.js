@@ -15,15 +15,15 @@ class AdminChangeController {
 			// const data = req.body
 			// for (let i of data) {
 			// 	const index = data.indexOf(i)
-			await models.AdminArticle.update({ idx: 9 }, { where: { id: 6 } })
-			// const art = await models.AdminArticle.findAll({ where: { idx: 1 } })
-			// if (art) {
-			// 	art.idx = 5
+			// await models.AdminArticle.update({ idx: 9 }, { where: { id: 6 } })
+			const art = await models.AdminArticle.findAll({ where: { id: 6} })
+			if (art) {
+				art.idx = 9
 
-			// 	await art.save()
-			// } else {
-			// 	console.log('тут ошибк')
-			// }
+				await art.save()
+			} else {
+				console.log('тут ошибк')
+			}
 
 			// }
 
