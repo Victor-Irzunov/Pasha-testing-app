@@ -16,7 +16,7 @@ class AdminChangeController {
 			// for (let i of data) {
 			// const index = data.indexOf(i)
 			// await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
-			const art = await models.AdminArticle.findAll({ where: { id: i.id } })
+			const art = await models.AdminArticle.findAll({ where: { id: 6 } })
 			console.log('art----->: ', art)
 			// if (art) {
 			// 	art.idx = 5
@@ -29,7 +29,7 @@ class AdminChangeController {
 			// }
 
 			// return res.json({ message: `Сохранено успешно` })
-			return res.status(200).json(art)
+			return res.json(art)
 		}
 		catch (e) {
 			console.log('e....-.....> ', e)
