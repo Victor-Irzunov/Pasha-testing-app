@@ -75,13 +75,8 @@ app.use(errorHandler)
 const start = async () => {
 	try {
 		await sequelize.authenticate()
-		sequelize.sync({ alter: true, drop: false }).then(() => {
-			app.listen(PORT, () => console.log(chalk.cyan(`::::::::...The server is running on the port: ${PORT}...::::::::`)))
-		})
-			.catch(err => {
-				console.error('Error-->:', err);
-			});
-		// app.listen(PORT, () => console.log(chalk.cyan(`::::::::...The server is running on the port: ${PORT}...::::::::`)))
+		await sequelize.sync({ alter: true, drop: false })
+		app.listen(PORT, () => console.log(chalk.cyan(`::::::::...The server is running on the port: ${PORT}...::::::::`)))
 
 	} catch (err) {
 		console.log('error start: ', err);
