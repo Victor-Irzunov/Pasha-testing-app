@@ -75,7 +75,7 @@ app.use(errorHandler)
 const start = async () => {
 	try {
 		await sequelize.authenticate()
-		await sequelize.sync()
+		await sequelize.sync({ alter: true, drop: false })
 		app.listen(PORT, () => console.log(chalk.cyan(`::::::::...The server is running on the port: ${PORT}...::::::::`)))
 
 	} catch (err) {
