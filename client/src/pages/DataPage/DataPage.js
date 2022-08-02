@@ -35,7 +35,9 @@ const DataPage = observer(() => {
 	}
 
 	const sendChangeOrderArticles = () => {
-		changeOrderArticles(data)
+		let json = JSON.stringify(data)
+		let post_data = { json_data: json }
+		changeOrderArticles(post_data)
 			.then(data => {
 				console.log('data: ', data)
 			})
