@@ -31,7 +31,7 @@ class AdminController {
 
 	async getAll(req, res, next) {
 		try {
-			const articles = await models.AdminArticle.findAll()
+			const articles = await models.AdminArticle.findAll({ where: { idx: 1 } })
 
 			return res.status(200).json(articles)
 		}
@@ -94,10 +94,13 @@ class AdminController {
 				const index = data.indexOf(i)
 				// await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
 				const art = await models.AdminArticle.findOne({ where: { id: i.id } })
+				console.log('art----->: ', art)
 				if (art) {
 					art.idx = index
 
 					await art.save()
+				} else {
+					console.log('тут ошибка')
 				}
 
 			}
@@ -105,6 +108,7 @@ class AdminController {
 			return res.json({ message: `Сохранено успешно` })
 		}
 		catch (e) {
+			console.log('e....-.....> ', e)
 			next(ApiError.badRequest(e.message))
 		}
 	}
