@@ -83,7 +83,7 @@ const IsNewCandidat = sequelize.define('isnewcandidat', {
 	},
 })
 
-User.sync({ alter: true }).then(
+AdminArticle.sync({ alter: true }).then(
 	() => console.log("Sync complete !!!!!!!!!!!!")
 );
 
