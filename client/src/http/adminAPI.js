@@ -25,6 +25,6 @@ export const editOneArticle = async (obj) => {
 	return data
 }
 export const changeOrderArticles = async (obj) => {
-	const { data } = await $authHost.put('api/admin/change/order', obj)
+	const { data } = await $authHost.get('api/admin/change/order')
 	return data
 }

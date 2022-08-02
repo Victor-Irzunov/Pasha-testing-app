@@ -4,7 +4,7 @@ import { adminChangeController } from '../controllers/adminChangeController.js'
 import checkRole from '../middleware/checkRoleMiddleware.js'
 
 
-router.put('/order', checkRole('ADMIN'), adminChangeController.editOrder)
+router.get('/order', checkRole('ADMIN'), adminChangeController.editOrder)
 
 
 export default router
