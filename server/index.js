@@ -70,7 +70,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 //: middleware c err обязательно в конце
-// app.use(errorHandler)
+app.use(errorHandler)
 
 const start = async () => {
 	try {
