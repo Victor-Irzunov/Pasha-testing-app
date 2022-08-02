@@ -12,9 +12,14 @@ class AdminChangeController {
 
 	async editOrder(req, res, next) {
 		try {
-			const data = req.body
-			const b = JSON.parse(data)
-			for (let i of b) {
+			// const data = req.body
+			const data = [
+				{ id: 3 },
+				{ id: 4 },
+				{ id: 5 },
+				{ id: 6 },
+			]
+			for (let i of data) {
 				const index = data.indexOf(i)
 				const a = await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
 				// const art = await models.AdminArticle.findAll({ where: { id: 6} })
@@ -25,11 +30,11 @@ class AdminChangeController {
 				// } else {
 				// 	console.log('тут ошибк')
 				// }
-				return res.json({ message: a })
+				// return res.json({ message: a })
 			}
 
-			// return res.json({ message: `Сохранено успешно` })
-			
+			return res.json({ message: `Сохранено успешно` })
+
 		}
 		catch (e) {
 			next(ApiError.badRequest(e.message))
