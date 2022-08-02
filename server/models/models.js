@@ -83,6 +83,10 @@ const IsNewCandidat = sequelize.define('isnewcandidat', {
 	},
 })
 
+User.sync({ alter: true }).then(
+	() => console.log("Sync complete !!!!!!!!!!!!")
+);
+
 export const models = {
 	User,
 	AdminArticle,
