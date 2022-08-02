@@ -25,11 +25,11 @@ class AdminChangeController {
 				// } else {
 				// 	console.log('тут ошибк')
 				// }
-
+				return res.json({ message: a })
 			}
 
 			// return res.json({ message: `Сохранено успешно` })
-			return res.json({ message: a })
+			
 		}
 		catch (e) {
 			next(ApiError.badRequest(e.message))
