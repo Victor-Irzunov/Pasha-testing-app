@@ -89,21 +89,21 @@ class AdminController {
 
 	async change(req, res, next) {
 		try {
-			const data = req.body
-			for (let i of data) {
-				const index = data.indexOf(i)
-				// await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
-				const art = await models.AdminArticle.findAll({ where: { id: i.id } })
-				console.log('art----->: ', art)
-				// if (art) {
-				// 	art.idx = 5
+			// const data = req.body
+			// for (let i of data) {
+			// const index = data.indexOf(i)
+			// await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
+			const art = await models.AdminArticle.findAll({ where: { id: i.id } })
+			console.log('art----->: ', art)
+			// if (art) {
+			// 	art.idx = 5
 
-				// 	await art.save()
-				// } else {
-				// 	console.log('тут ошибк')
-				// }
+			// 	await art.save()
+			// } else {
+			// 	console.log('тут ошибк')
+			// }
 
-			}
+			// }
 
 			// return res.json({ message: `Сохранено успешно` })
 			return res.status(200).json(art)
