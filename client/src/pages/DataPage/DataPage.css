@@ -83,9 +83,9 @@
 	transform: scaleX(1);
 }
 
-.data-btn{
+.data-btn {
 	position: absolute;
-	top: 0;
+	top: 5em;
 	right: 2em;
 	padding: 5px 10px 5px 10px;
 	background: transparent;

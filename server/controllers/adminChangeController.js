@@ -16,8 +16,7 @@ class AdminChangeController {
 			// for (let i of data) {
 			// const index = data.indexOf(i)
 			// await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
-			const art = await models.AdminArticle.findAll({ where: { id: 6 } })
-			console.log('art----->: ', art)
+			const art = await models.AdminArticle.findAll({ where: { idx: 1 } })
 			// if (art) {
 			// 	art.idx = 5
 
@@ -32,7 +31,6 @@ class AdminChangeController {
 			return res.json(art)
 		}
 		catch (e) {
-			console.log('e....-.....> ', e)
 			next(ApiError.badRequest(e.message))
 		}
 	}
