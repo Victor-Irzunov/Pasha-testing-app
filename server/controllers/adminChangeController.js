@@ -15,7 +15,7 @@ class AdminChangeController {
 			// const data = req.body
 			// for (let i of data) {
 			// 	const index = data.indexOf(i)
-			await models.AdminArticle.update({ idx: 9 }, { where: { id: 6 } })
+			const a = await models.AdminArticle.update({ idx: 9 }, { where: { id: 6 } })
 			// const art = await models.AdminArticle.findAll({ where: { id: 6} })
 			// if (art) {
 			// 	art.idx = 9
@@ -27,8 +27,8 @@ class AdminChangeController {
 
 			// }
 
-			return res.json({ message: `Сохранено успешно` })
-			// return res.json(art)
+			// return res.json({ message: `Сохранено успешно` })
+			return res.json({ message: a })
 		}
 		catch (e) {
 			next(ApiError.badRequest(e.message))
