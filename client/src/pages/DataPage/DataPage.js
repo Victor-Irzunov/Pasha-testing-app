@@ -35,7 +35,11 @@ const DataPage = observer(() => {
 	}
 
 	const sendChangeOrderArticles = () => {
-		changeOrderArticles(data)
+		let obj = {}
+		data.forEach((el, idx) => {
+			obj[el.id] = idx
+		})
+		changeOrderArticles(obj)
 			.then(data => {
 				console.log('data: ', data)
 			})

@@ -13,10 +13,9 @@ class AdminChangeController {
 	async editOrder(req, res, next) {
 		try {
 			const data = req.body
-			const b = JSON.parse(data.a)
-			for (let i of b) {
-				const index = b.indexOf(i)
-				const a = await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
+			for (let i in data) {
+				// const index = data.indexOf(i)
+				const a = await models.AdminArticle.update({ idx: data[i] }, { where: { id: i } })
 				// const art = await models.AdminArticle.findAll({ where: { id: 6} })
 				// if (art) {
 				// 	art.idx = 9
