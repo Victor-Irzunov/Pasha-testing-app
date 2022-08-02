@@ -31,7 +31,7 @@ class AdminController {
 
 	async getAll(req, res, next) {
 		try {
-			const articles = await models.AdminArticle.findAll({ where: { idx: 1 } })
+			const articles = await models.AdminArticle.findAll()
 
 			return res.status(200).json(articles)
 		}
@@ -93,19 +93,20 @@ class AdminController {
 			for (let i of data) {
 				const index = data.indexOf(i)
 				// await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
-				const art = await models.AdminArticle.findOne({ where: { id: i.id } })
+				const art = await models.AdminArticle.findAll({ where: { id: i.id } })
 				console.log('art----->: ', art)
-				if (art) {
-					art.idx = index
+				// if (art) {
+				// 	art.idx = 5
 
-					await art.save()
-				} else {
-					console.log('тут ошибка')
-				}
+				// 	await art.save()
+				// } else {
+				// 	console.log('тут ошибк')
+				// }
 
 			}
 
-			return res.json({ message: `Сохранено успешно` })
+			// return res.json({ message: `Сохранено успешно` })
+			return res.status(200).json(art)
 		}
 		catch (e) {
 			console.log('e....-.....> ', e)
