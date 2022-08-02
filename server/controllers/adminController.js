@@ -87,7 +87,7 @@ class AdminController {
 	}
 
 
-	async change(req, res, next) {
+	async editOrder(req, res, next) {
 		try {
 			// const data = req.body
 			// for (let i of data) {

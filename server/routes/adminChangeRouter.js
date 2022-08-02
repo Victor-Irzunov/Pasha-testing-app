@@ -1,10 +1,10 @@
 import { Router } from "express"
 const router = new Router()
-import { adminController } from '../controllers/adminController.js'
+import { adminChangeController } from '../controllers/adminChangeController.js'
 import checkRole from '../middleware/checkRoleMiddleware.js'
 
 
-router.put('/order', checkRole('ADMIN'), adminController.change)
+router.put('/order', checkRole('ADMIN'), adminChangeController.editOrder)
 
 
 export default router
