@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { getAll } from '../../http/adminAPI.js'
 import ModalData from '../../components/modalData/ModalData.js'
-// import UserStore from '../../store/UserStore'
 import { ThemesContext } from '../../themes/themes'
 import { changeOrderArticles } from '../../http/adminAPI'
 import { observer } from "mobx-react-lite"
@@ -21,7 +20,6 @@ const DataPage = observer(() => {
 	useEffect(() => {
 		getAll()
 			.then(data => {
-				console.log('data--->>> ', data)
 				setData(data.sort((a, b) => a.idx - b.idx))
 			})
 	}, [])
@@ -63,7 +61,7 @@ const DataPage = observer(() => {
 
 					{user.isAuth && user.userData.role === 'ADMIN'
 						?
-						<Reorder.Group as='ul' axys='y' values={data} onReorder={setData} className='data-page-ul'>
+						<Reorder.Group as='ul' axis='y' values={data} onReorder={setData} className='data-page-ul'>
 							{data.map(obj => {
 								return (
 									<DataItemAdmin obj={obj} key={obj.id} openModalData={openModalData} setId={setId} user={user} />

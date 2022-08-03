@@ -1,7 +1,10 @@
 import React from 'react'
-import { Reorder } from "framer-motion"
+import {  Reorder } from "framer-motion"
 
 function DataItemAdmin({ obj, openModalData, setId, user }) {
+
+
+
 	return (
 		<Reorder.Item
 			value={obj}
@@ -9,10 +12,6 @@ function DataItemAdmin({ obj, openModalData, setId, user }) {
 			onClick={() => {
 				openModalData()
 				setId(obj.id)
-			}}
-			whileDrag={{
-				scale: 1.1,
-				boxShadow: '8px 0px 0px 0px #DCD0C0, 0px 8px 0px 0px #B1938B, -8px 0px 0px 0px #4E4E56, 0px 0px 0px 8px #DA635D, 5px 5px 15px 5px rgba(255,76,30,0)23',
 			}}
 		>
 			<span className='li-span'>

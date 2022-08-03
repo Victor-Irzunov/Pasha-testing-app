@@ -10,7 +10,7 @@ import { getIsContact } from "../../http/contactMessageAPI"
 import { getIsCandidat } from '../../http/candidateAPI'
 import { MdOutlineMarkEmailUnread } from "react-icons/md"
 import { FaUserTie, FaSun, FaMoon } from "react-icons/fa"
-import { VscBug } from "react-icons/vsc"
+import { VscTextSize } from "react-icons/vsc"
 import { useLocation } from 'react-router-dom'
 import './Header.css'
 import logo from './images/logo.png'
@@ -81,7 +81,7 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 
 									}}
 								>
-									<VscBug className={!isChangeYellow ? 'yellow-bug' : 'yellow-bug active'} />
+									<VscTextSize className={!isChangeYellow ? 'yellow-bug' : 'yellow-bug active'} />
 								</div>
 								<div className={redClass}
 									onClick={() => {
@@ -92,7 +92,7 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 
 									}}
 								>
-									<VscBug className={!isChangeRed ? 'red-bug' : 'red-bug active'} />
+									<VscTextSize className={!isChangeRed ? 'red-bug' : 'red-bug active'} />
 								</div>
 								<div className={whiteClass}
 									onClick={() => {
@@ -103,7 +103,7 @@ const Header = observer(({ openMenu, setIsActive, isActive, toggleTheme, setNumT
 
 									}}
 								>
-									<VscBug className={!isChangeWhite ? 'white-bug' : 'white-bug active'} />
+									<VscTextSize className={!isChangeWhite ? 'white-bug' : 'white-bug active'} />
 								</div>
 							</div>
 						</div>

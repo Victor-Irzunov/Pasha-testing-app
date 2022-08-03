@@ -63,10 +63,6 @@ class AdminController {
 		}
 	}
 
-
-
-
-
 	async editOneArticle(req, res, next) {
 		try {
 			let { title, article, id } = req.body
@@ -85,36 +81,6 @@ class AdminController {
 			next(ApiError.badRequest(e.message))
 		}
 	}
-
-
-	async editOrder(req, res, next) {
-		try {
-			// const data = req.body
-			// for (let i of data) {
-			// const index = data.indexOf(i)
-			// await models.AdminArticle.update({ idx: index }, { where: { id: i.id } })
-			const art = await models.AdminArticle.findAll({ where: { id: i.id } })
-			console.log('art----->: ', art)
-			// if (art) {
-			// 	art.idx = 5
-
-			// 	await art.save()
-			// } else {
-			// 	console.log('тут ошибк')
-			// }
-
-			// }
-
-			// return res.json({ message: `Сохранено успешно` })
-			return res.status(200).json(art)
-		}
-		catch (e) {
-			console.log('e....-.....> ', e)
-			next(ApiError.badRequest(e.message))
-		}
-	}
-
-
 }
 
 export const adminController = new AdminController()
