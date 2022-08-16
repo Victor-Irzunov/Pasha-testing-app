@@ -36,10 +36,10 @@ app.use(fileUpload({}))
 app.use(compression())
 app.use('/api', router)
 
-// app.all('/*', function(req, res, next) {
-// 	res.header("Cross-Origin-Resource-Policy", "cross-origin");
-// 	next();
-//  });
+app.all('/*', function (req, res, next) {
+	res.header("Cross-Origin-Resource-Policy", "cross-origin");
+	next();
+});
 
 // app.use(
 // 	helmet.contentSecurityPolicy({
