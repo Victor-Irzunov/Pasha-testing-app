@@ -48,7 +48,7 @@ const Candidate = sequelize.define('candidate', {
 		type: DataTypes.STRING, allowNull: false
 	},
 	info: {
-		type: DataTypes.STRING, allowNull: false
+		type: DataTypes.TEXT, allowNull: false
 	},
 })
 
@@ -63,7 +63,7 @@ const Contact = sequelize.define('contact', {
 		type: DataTypes.STRING, allowNull: false
 	},
 	text: {
-		type: DataTypes.STRING, allowNull: false
+		type: DataTypes.TEXT, allowNull: false
 	},
 })
 const IsNewContact = sequelize.define('isnewcontact', {
